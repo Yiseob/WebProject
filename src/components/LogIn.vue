@@ -59,7 +59,7 @@ export default {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Jua&family=Patrick+Hand&family=Poor+Story&family=Shadows+Into+Light&display=swap");
 .background {
-  height: 1200px;
+  height:1400px;
   display: flex;
   align-items: center;
   padding-top: 40px;
@@ -78,7 +78,7 @@ export default {
   text-align: center;
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 40%;
   border-radius: 6%;
   margin-left: -190px;
   margin-top: -240px;

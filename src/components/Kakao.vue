@@ -2,8 +2,7 @@
   <button class="w-100 py-2 mb-2 btn btn-outline-dark rounded-3">
     <div v-on:click="kakaoLoginBtn">
       <img class="logo" src="../assets/kakao2.png"/>
-  
-      카카오로 로그인하기
+       카카오로 로그인하기
     </div>
   </button>
 </template>
@@ -64,6 +63,7 @@ button {
 .logo {
   width: 25px;
   height: 25px;
-  margin-bottom :10px;
+  margin-bottom :4px;
+  margin-top :2px;
 }
 </style>
