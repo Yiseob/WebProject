@@ -64,7 +64,7 @@ export default {
   align-items: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-image: url(../assets/LoginBackGround.jpg);
+  background-image: url(../../assets/LoginBackGround.jpg);
   background-size: cover;
   position: relative;
   font-family: "Patrick Hand", cursive;

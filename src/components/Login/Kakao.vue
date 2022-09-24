@@ -1,7 +1,7 @@
 <template>
   <button class="w-100 py-2 mb-2 btn btn-outline-dark rounded-3">
     <div v-on:click="kakaoLoginBtn">
-      <img class="logo" src="../assets/kakao2.png"/>
+      <img class="logo" src="../../assets/kakao2.png"/>
        카카오로 로그인하기
     </div>
   </button>
