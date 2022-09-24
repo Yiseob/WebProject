@@ -38,6 +38,11 @@
     },
     "rules": {}
   },
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
   "browserslist": [
     "> 1%",
     "last 2 versions",

@@ -1,15 +1,16 @@
 <template>
+  <div class="Back">
   <div class="Cards">
     <b-card-group deck>
       <b-card
-        title="Title"
+        title="김포 dot"
         img-src="./Lush1.png"
         img-alt="Image"
         img-top
+        
       >
         <b-card-text>
-          This is a wider card with supporting text below as a natural lead-in
-          to additional content. This content is a little bit longer.
+         김포 닷에 대한 설명
         </b-card-text>
         <template #footer>
           <small class="text-muted">Last updated 3 mins ago</small>
@@ -17,14 +18,13 @@
       </b-card>
 
       <b-card
-        title="Title"
+        title="일산 dot"
         img-src="./Lush2.png"
         img-alt="Image"
         img-top
       >
         <b-card-text>
-          This card has supporting text below as a natural lead-in to additional
-          content.
+         일산 닷에 대한 설명
         </b-card-text>
         <template #footer>
           <small class="text-muted">Last updated 3 mins ago</small>
@@ -32,21 +32,20 @@
       </b-card>
 
       <b-card
-        title="Title"
+        title="원마운트 dots"
         img-src="./Lush3.png"
         img-alt="Image"
         img-top
       >
         <b-card-text>
-          This is a wider card with supporting text below as a natural lead-in
-          to additional content. This card has even longer content than the
-          first to show that equal height action.
+       원마운트 닷에 대한 설명
         </b-card-text>
         <template #footer>
           <small class="text-muted">Last updated 3 mins ago</small>
         </template>
       </b-card>
     </b-card-group>
+  </div>
   </div>
 </template>
 
@@ -56,8 +55,14 @@ export default {
 };
 </script>
 <style scoped>
+.Back{
+   background-color:lightsteelblue;
+   height:auto;
+   padding: 30px;
+}
 .Cards {
   width: auto;
   margin: 100px;
+ 
 }
 </style>

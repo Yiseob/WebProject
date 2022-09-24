@@ -3,7 +3,7 @@
     <main class="form-signin w-100 m-auto">
       <div class="wrapper">
         <form>
-          <h1 class="MG">Micro Garden</h1>
+          <router-link to="/main" class="MG">Micro Garden</router-link>
           <br>
           <h4 class="h5 mb-3 fw-normal">로그인</h4>
 

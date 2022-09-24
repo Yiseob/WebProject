@@ -10,8 +10,7 @@
             justify-content-center justify-content-lg-start
           "
         >
-          <a
-            href="/"
+          <router-link to="/main"
             class="
               d-flex
               align-items-center
@@ -21,7 +20,7 @@
             "
           >
             Micro Garden
-          </a>
+          </router-link>
 
           <ul
             class="
@@ -34,7 +33,7 @@
             "
           >
             <li>
-              <a href="#" class="nav-link text-secondary">
+              <router-link to="/main" class="nav-link text-secondary">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -48,10 +47,10 @@
                   />
                 </svg>
                 Home
-              </a>
+              </router-link>
             </li>
             <li>
-              <a href="#" class="nav-link text-white">
+              <router-link to="/read" class="nav-link text-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -64,8 +63,8 @@
                     d="M4 2v2H2V2h2zm1 12v-2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0-5V7a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0-5V2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm5 10v-2a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0-5V7a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0-5V2a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zM9 2v2H7V2h2zm5 0v2h-2V2h2zM4 7v2H2V7h2zm5 0v2H7V7h2zm5 0h-2v2h2V7zM4 12v2H2v-2h2zm5 0v2H7v-2h2zm5 0v2h-2v-2h2zM12 1a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zm-1 6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zm1 4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1h-2z"
                   />
                 </svg>
-                Dashboard
-              </a>
+                Bulletin
+              </router-link>
             </li>
             <li>
               <a href="#" class="nav-link text-white">
@@ -85,7 +84,7 @@
               </a>
             </li>
             <li>
-              <a href="#" class="nav-link text-white">
+              <router-link to="/products" class="nav-link text-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -99,12 +98,10 @@
                   />
                 </svg>
                 Products
-              </a>
+              </router-link>
             </li>
-            <li>
-              <a
-                href="../example/sign-in/index.html"
-                target="_blank"
+            <li v-if="isSigned">
+              <router-link to="/login"
                 class="nav-link text-white"
               >
                 <svg
@@ -120,7 +117,14 @@
                   />
                 </svg>
                 Customers
-              </a>
+              </router-link>
+            </li>
+            <li v-else>
+              <router-link to="/login"
+                class="nav-link text-white"
+              >
+                Login
+              </router-link>
             </li>
           </ul>
         </div>
@@ -132,15 +136,20 @@
 <script>
 export default {
   name: "NavBar",
+  data() {
+    return {
+      isSigned: true,
+    }
+  }
 };
 </script>
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Shadows+Into+Light&display=swap");
-.d-flex{
-    font-family: 'Shadows Into Light', cursive;
-    font-size: 25px;
-    font-weight: 200;
+.d-flex {
+  font-family: "Shadows Into Light", cursive;
+  font-size: 25px;
+  font-weight: 200;
 }
 
 .container {

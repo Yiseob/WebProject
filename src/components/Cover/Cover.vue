@@ -3,7 +3,7 @@
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
       <header class="mb-auto">
         <div>
-          <h3 class="float-md-start mb-0">Micro Garden</h3>
+          <router-link to="/main" class="float-md-start mb-0 ">Micro Garden</router-link>
           <nav class="nav nav-masthead justify-content-center float-md-end">
             <a
               class="nav-link fw-bold py-1 px-0 active"
@@ -21,20 +21,16 @@
         <h1 class="center">Micro Garden</h1>
         <p class="lead"></p>
         <p class="lead">
-          <a
+          <router-link to="/main"
             href="#"
-            class="btn btn-lg btn-secondary fw-bold border-white bg-white"
-            >Learn more</a
+            class="btn btn-lg btn-secondary fw-bold text-black-50 border-white bg-white"
+            >Home Page</router-link
           >
         </p>
       </main>
 
       <footer class="mt-auto text-white-50">
-        <p>
-          Cover template for
-          <a href="https://microgarden.com/" class="text-white">Bootstrap</a>,
-          by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.
-        </p>
+        
       </footer>
     </div>
     <link
@@ -68,7 +64,9 @@ body {
   color: #333;
   text-shadow: none;
 }
-
+.float-md-start{
+  font-size : 25px;
+}
 .center {
   font-size: 80px;
   font-weight: 800;

@@ -1,9 +1,6 @@
 <template>
   <div id="app">
-   
     <router-view></router-view>
-    <!-- <Cover></Cover>  -->
-
   </div>
 </template>
 
@@ -21,5 +18,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   margin-top: 0px;
+}
+
+a {
+  color: inherit !important;
+  text-decoration: none !important;
 }
 </style>

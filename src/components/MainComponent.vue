@@ -3,7 +3,7 @@
     <NavBar />
     <br />
     <MainBody />
-
+    <br />
     <Cards />
     <br />
     <Footer />
