@@ -1,51 +1,34 @@
 <template>
   <div class="Back">
-  <div class="Cards">
-    <b-card-group deck>
-      <b-card
-        title="김포 dot"
-        img-src="./Lush1.png"
-        img-alt="Image"
-        img-top
-        
-      >
-        <b-card-text>
-         김포 닷에 대한 설명
-        </b-card-text>
-        <template #footer>
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </template>
-      </b-card>
-
-      <b-card
-        title="일산 dot"
-        img-src="./Lush2.png"
-        img-alt="Image"
-        img-top
-      >
-        <b-card-text>
-         일산 닷에 대한 설명
-        </b-card-text>
-        <template #footer>
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </template>
-      </b-card>
-
-      <b-card
-        title="원마운트 dots"
-        img-src="./Lush3.png"
-        img-alt="Image"
-        img-top
-      >
-        <b-card-text>
-       원마운트 닷에 대한 설명
-        </b-card-text>
-        <template #footer>
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </template>
-      </b-card>
-    </b-card-group>
-  </div>
+    <div class="Cards">
+      <b-card-group deck>
+        <router-link to="/">
+          <b-card
+            title="About Us"
+            img-src="./Lush1.png"
+            img-alt="Image"
+            img-top
+          >
+            <b-card-text> Micro Garden 에 대하여 </b-card-text>
+          </b-card>
+        </router-link>
+        <router-link to="/dots">
+          <b-card title="Dots" img-src="./Lush2.png" img-alt="Image" img-top>
+            <b-card-text> 각 지점들 </b-card-text>
+          </b-card>
+        </router-link>
+        <router-link to="/products">
+          <b-card
+            title="Products"
+            img-src="./Lush3.png"
+            img-alt="Image"
+            img-top
+          >
+            <b-card-text> 친환경적인 작물들 </b-card-text>
+          </b-card>
+        </router-link>
+      </b-card-group>
+    </div>
   </div>
 </template>
 
@@ -55,14 +38,17 @@ export default {
 };
 </script>
 <style scoped>
-.Back{
-   background-color:lightsteelblue;
-   height:auto;
-   padding: 30px;
+.Back {
+  background-color: lightsteelblue;
+  height: auto;
+  padding: 30px;
 }
 .Cards {
+  text-align: center;
   width: auto;
-  margin: 100px;
- 
+  margin: 80px;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>

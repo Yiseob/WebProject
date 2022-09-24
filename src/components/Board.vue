@@ -62,8 +62,8 @@ export default {
 <style scoped>
 .Board {
   text-align: center;
-  margin-top: 100px;
-  margin-left: 200px;
-  margin-right: 200px;
+  margin-top: 50px;
+  margin-left: 230px;
+  margin-right: 230px;
 }
 </style>
