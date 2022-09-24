@@ -2,7 +2,7 @@
   <div>
     <table>
       <tr>
-        <td>글쓴이</td>
+        <td>작성자</td>
         <td>제목</td>
         <td>내용</td>
       </tr>
