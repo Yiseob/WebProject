@@ -50,7 +50,7 @@
               </router-link>
             </li>
             <li>
-              <router-link to="/read" class="nav-link text-white">
+              <router-link to="/board/free" class="nav-link text-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
