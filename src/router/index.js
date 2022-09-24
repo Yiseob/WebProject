@@ -5,6 +5,7 @@ import Cover from '../components/Cover/Cover.vue'
 import Products from '../components/Products/Products.vue'
 import Read from '../components/Bulletin/Read.vue'
 import Create from '../components/Bulletin/Create.vue'
+import Detail from '../components/Bulletin/Detail.vue'
 
 
 const routes = [
@@ -12,8 +13,9 @@ const routes = [
     { path: '/login', component: LoginComponent },
     { path: '/', component: Cover },
     { path: '/products', component: Products },
-    { path: '/read', component: Read },
-    { path: '/create', component: Create },
+    { path: '/read', name:"Read", component: Read },
+    { path: '/create/:contentId?', name: "Create", component: Create },
+    { path: '/detail/:contentId', name: "Detail", component: Detail },
 ]
 
 

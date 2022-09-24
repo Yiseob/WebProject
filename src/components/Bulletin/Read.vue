@@ -6,13 +6,13 @@
         <td>제목</td>
         <td>내용</td>
       </tr>
-      <tr v-for="(value, i) in data" :key=i>
+      <tr :key="index" v-for="(value, index) in data" @click="detail(index)">
         <td>{{ value.writer }}</td>
         <td>{{ value.title }}</td>
         <td>{{ value.content }}</td>
       </tr>
     </table>
-    <button @click ="write">글쓰기</button>
+    <button @click="write">글쓰기</button>
   </div>
 </template>
 <script>
@@ -25,13 +25,21 @@ export default {
       data: data,
     };
   },
-  methods:{
-    write(){
+  methods: {
+    write() {
       this.$router.push({
-        path:'create'
-      })
-    }
-  }
+        path: "create",
+      });
+    },
+    detail(index) {
+      this.$router.push({
+        name: "Detail",
+        params: {
+          contentId: index,
+        },
+      });
+    },
+  },
 };
 </script>
 <style scoped>
