@@ -3,11 +3,10 @@ import MainComponent from '../components/MainComponent.vue'
 import LoginComponent from '../components/LoginComponent.vue'
 import Cover from '../components/Cover/Cover.vue'
 import Products from '../components/Products/Products.vue'
-import Read from '../components/Bulletin/Read.vue'
-import Create from '../components/Bulletin/Create.vue'
-import Detail from '../components/Bulletin/Detail.vue'
 import Board from '../components/Board.vue'
 import Dots from '../components/Dots.vue'
+import ContentDetail from '../components/ContentDetail.vue'
+import Create from '../components/Create.vue'
 
 
 const routes = [
@@ -15,11 +14,10 @@ const routes = [
     { path: '/login', component: LoginComponent },
     { path: '/', component: Cover },
     { path: '/products', component: Products },
-    { path: '/read', name:"Read", component: Read },
-    { path: '/create/:contentId?', name: "Create", component: Create },
-    { path: '/detail/:contentId', name: "Detail", component: Detail },
     { path: '/Board/free', component: Board },
     { path: '/dots', component: Dots },
+    { path: '/board/free/detail/:contentId', name:'ContentDetail', component: ContentDetail },
+    { path: '/board/free/create/:contentId?', name:'Create', component: Create },
 ]
 
 

@@ -22,7 +22,7 @@ export default {
         user_id: 1,
         title: '최이섭 출근했습니다',
         context: '차 막히네요;',
-        created_at: '2019-01-01 13:11:42',
+        created_at: '2022-09-24 13:11:42',
         updated_at: null
       },
       {
@@ -30,7 +30,7 @@ export default {
         user_id: 3,
         title: '이준표 출근했습니다',
         context: '화이팅!',
-        created_at: '2019-01-02 13:11:42',
+        created_at: '2022-09-24 13:11:42',
         updated_at: null
       },
       {
@@ -38,7 +38,7 @@ export default {
         user_id: 2,
         title: '맹두호 출근했습니다',
         context: '^^',
-        created_at: '2019-03-29 13:11:42',
+        created_at: '2022-09-24 13:11:42',
         updated_at: null
       }
     ],
