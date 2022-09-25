@@ -1,21 +1,18 @@
 <template>
   <div>
     <NavBar />
-
-    <div class="video" data-bs-ride="carousel"></div>
-     <hr class="featurette-divider" />
+    <p align="middle">
+      <video muted autoplay loop>
+        <source src="../assets/동영상.mp4" type="video/mp4" />
+      </video>
+    </p>
+    <hr class="featurette-divider" />
     <div class="body">
       <div class="row">
         <div class="col-lg-4">
-          <svg
-            class="bd-placeholder-img rounded-circle"
-            width="400"
-            height="400"
-          >
-           
-            <rect width="100%" height="100%" fill="lightgreen" />
-            
-          </svg>
+          <img src="../assets/일산.jpg" class="dots" width="400" height="400" />
+
+          <!-- <img src="../assets/일산.jpg" width="100%" height="100%" fill="lightgreen" /> -->
 
           <h2 class="fw-normal">일산</h2>
           <p>일산dot 설명</p>
@@ -23,15 +20,9 @@
         </div>
         <!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <svg
-            class="bd-placeholder-img rounded-circle"
-            width="400"
-            height="400"
-          >
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="lightblue" />
-            
-          </svg>
+          <img src="../assets/김포.jpg" class="dots" width="400" height="400" />
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="lightblue" />
 
           <h2 class="fw-normal">김포</h2>
           <p>김포dot 설명</p>
@@ -39,15 +30,14 @@
         </div>
         <!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <svg
-            class="bd-placeholder-img rounded-circle"
+          <img
+            src="../assets/원마운트.jpg"
+            class="dots"
             width="400"
             height="400"
-          >
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="lightyellow" />
-        
-          </svg>
+          />
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="lightyellow" />
 
           <h2 class="fw-normal">원마운트</h2>
           <p>원마운트 dot 설명</p>
@@ -63,10 +53,9 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading fw-normal lh-1">
-            First featurette heading.
-            <span class="text-muted">It’ll blow your mind.</span>
-          </h2>
+          <h2 class="featurette-heading fw-normal lh-1">일산 점 설명</h2>
+          <span class="text-muted">It’ll blow your mind.</span>
+
           <p class="lead">
             Some great placeholder content for the first featurette here.
             Imagine some exciting prose here.
@@ -99,10 +88,9 @@
 
       <div class="row featurette">
         <div class="col-md-7 order-md-2">
-          <h2 class="featurette-heading fw-normal lh-1">
-            Oh yeah, it’s that good.
-            <span class="text-muted">See for yourself.</span>
-          </h2>
+          <h2 class="featurette-heading fw-normal lh-1">김포 점 설명</h2>
+          <span class="text-muted">See for yourself.</span>
+
           <p class="lead">
             Another featurette? Of course. More placeholder content here to give
             you an idea of how this layout would work with some actual
@@ -136,9 +124,9 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading fw-normal lh-1">
-            And lastly, this one. <span class="text-muted">Checkmate.</span>
-          </h2>
+          <h2 class="featurette-heading fw-normal lh-1">원마운트 점 설명</h2>
+           <span class="text-muted">Checkmate.</span>
+
           <p class="lead">
             And yes, this is the last block of representative placeholder
             content. Again, not really intended to be actually read, simply here
@@ -192,11 +180,16 @@ export default {
   margin-top: 10px;
   text-align: center;
 }
-.video {
-  height: 700px;
-  background: lavender
+video {
+  margin: auto;
+  max-height: 100%;
+  max-width: 100%;
+  display: inline-block;
+  background-size: cover;
 }
-.bd-placeholder-img {
+
+.dots {
+  border-radius: 60%;
   margin-bottom: 50px;
 }
 /* CUSTOMIZE THE CAROUSEL
