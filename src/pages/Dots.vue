@@ -160,7 +160,7 @@
   </div>
 </template>
 <script>
-import NavBar from "./Main/NavBar.vue";
+import NavBar from "@/components/Main/NavBar.vue";
 export default {
   name: "Dots",
   components: {

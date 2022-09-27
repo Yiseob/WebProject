@@ -6,14 +6,17 @@
         <b-form-input
           v-model="subject"
           placeholder="제목을 입력해주세요"
+          size="lg"
+          rows="1"
+          max-rows="3"
         ></b-form-input>
       </div>
       <div class="content">
         <b-form-textarea
           v-model="context"
           placeholder="내용을 입력해주세요"
-          rows="3"
-          max-rows="6"
+          rows="6"
+          max-rows="10"
         ></b-form-textarea>
       </div>
       <b-button @click="updateMode ? updateContent() : uploadContent()"
@@ -25,7 +28,7 @@
 </template>
 
 <script>
-import NavBar from "./Main/NavBar.vue";
+import NavBar from "@/components/Main/NavBar.vue";
 import data from "@/data";
 
 export default {
@@ -92,7 +95,7 @@ export default {
   text-align: center;
   margin-left: 350px;
   margin-right: 350px;
-  margin-top: 50px;
+  margin-top: 100px;
 }
 </style>
 

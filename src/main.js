@@ -15,3 +15,5 @@ const app = createApp(App)
 app.use(BootstrapVue3)
 app.use(router)
 app.mount('#app')
+
+window.Kakao.init('424f2da784ec819e556030a2493f9039');

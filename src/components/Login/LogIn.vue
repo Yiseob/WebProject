@@ -35,7 +35,7 @@
             로그인
           </button>
         
-          <kakao />
+          <LoginKakao />
 
 
           <p class="mt-5 mb-3 text-muted">&copy; 2022–2022</p>
@@ -46,11 +46,11 @@
 </template>
 
 <script>
-import Kakao from "./Kakao.vue"
+import LoginKakao from "./Kakao.vue"
 export default {
   name: "LogIn",
   components: {
-    Kakao,
+    LoginKakao,
 
   },
 };

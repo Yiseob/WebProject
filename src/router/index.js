@@ -1,12 +1,12 @@
 import { createWebHashHistory, createRouter } from 'vue-router'
-import MainComponent from '../components/MainComponent.vue'
-import LoginComponent from '../components/LoginComponent.vue'
-import Cover from '../components/Cover/Cover.vue'
+import MainComponent from '../pages/MainComponent.vue'
+import LoginComponent from '../pages/LoginComponent.vue'
+import Cover from '../pages/Cover.vue'
 import Products from '../components/Products/Products.vue'
-import Board from '../components/Board.vue'
-import Dots from '../components/Dots.vue'
-import ContentDetail from '../components/ContentDetail.vue'
-import Create from '../components/Create.vue'
+import Board from '../pages/Board.vue'
+import Dots from '../pages/Dots.vue'
+import ContentDetail from '../pages/ContentDetail.vue'
+import Create from '../pages/Create.vue'
 
 
 const routes = [

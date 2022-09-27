@@ -38,7 +38,7 @@
       href="https://getbootstrap.com/docs/5.2/examples/cover/"
     />
 
-    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="@/assets/dist/css/bootstrap.min.css" rel="stylesheet" />
   </body>
 </template>
 
@@ -74,7 +74,7 @@ body {
 
 .cover-container {
   max-width: 42em;
-  background-image: url(../../assets/CoverBackGround.jpg);
+  background-image: url(@/assets/CoverBackGround.jpg);
   background-size: cover;
 }
 
