@@ -36,9 +36,15 @@
           <button class="w-100 btn btn-lg btn-primary" type="submit">
             로그인
           </button>
-
-          <LoginKakao />
-
+          
+          <button
+            @click="signIn"
+            class="w-100 btn btn-lg btn-warning "
+            type="submit"
+          >
+            회원가입
+          </button>
+          <!-- <LoginKakao /> -->
           <p class="mt-5 mb-3 text-muted">&copy; 2022–2022</p>
         </form>
         <br />
@@ -48,13 +54,13 @@
 </template>
 
 <script>
-import LoginKakao from "./Kakao.vue";
+// import LoginKakao from "./Kakao.vue";
 import axios from "axios";
 
 export default {
   name: "LogIn",
   components: {
-    LoginKakao,
+    // LoginKakao,
   },
   data() {
     return {
@@ -66,14 +72,28 @@ export default {
     submitForm: function () {
       console.log(this.userId);
       console.log(this.userPassword);
-      let url = "http://3.34.149.238:8080/api/basic/login";
+      let url = "http://3.34.149.238:8080";
       let data = {
-       "userId": this.userId,
-        "userPassword": this.userPassword,
+        email: this.userId,
+        password: this.userPassword,
       };
       axios
-        .post(url, data)
+        .post(url + "/api/basic/login", data)
         .then((res) => {
+          let token = res.data.accessToken;
+          let config = {
+            headers: {
+              Authorization: "Bearer " + token,
+            },
+          };
+          axios
+            .get(url + "/api/member/info", config)
+            .then((response) => {
+              console.log(response);
+            })
+            .catch((error) => {
+              console.log(error);
+            });
           console.log(res);
         })
         .catch((err) => {
@@ -139,5 +159,10 @@ export default {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+button{
+margin-top: 5px;  
+margin-bottom: 5px;  
+
 }
 </style>
