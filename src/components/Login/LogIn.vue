@@ -4,7 +4,7 @@
       <div class="wrapper">
         <form>
           <router-link to="/main" class="MG">Micro Garden</router-link>
-          <br>
+          <br />
           <h4 class="h5 mb-3 fw-normal">로그인</h4>
 
           <div class="form-floating">
@@ -13,6 +13,7 @@
               class="form-control"
               id="floatingInput"
               placeholder="name@example.com"
+              v-model="userId"
             />
             <label for="floatingInput">이메일 주소</label>
           </div>
@@ -22,6 +23,7 @@
               class="form-control"
               id="floatingPassword"
               placeholder="Password"
+              v-model="password"
             />
             <label for="floatingPassword">비밀번호</label>
           </div>
@@ -31,27 +33,60 @@
               <input type="checkbox" value="remember-me" /> 아이디 기억
             </label>
           </div>
-          <button class="w-100 btn btn-lg btn-primary" type="submit">
+          <button
+            class="w-100 btn btn-lg btn-primary"
+            @click="loginSubmit"
+            type="submit"
+          >
             로그인
           </button>
-        
-          <LoginKakao />
 
+          <LoginKakao />
 
           <p class="mt-5 mb-3 text-muted">&copy; 2022–2022</p>
         </form>
+        <br />
+     
       </div>
     </main>
   </div>
 </template>
 
 <script>
-import LoginKakao from "./Kakao.vue"
+import LoginKakao from "./Kakao.vue";
+import axios from "axios";
+
 export default {
   name: "LogIn",
   components: {
     LoginKakao,
-
+  },
+  data() {
+    return {
+      userId: "",
+      password: "",
+    };
+  },
+  methods: {
+    loginSubmit() {
+      let saveData = {};
+      saveData.userId = this.userId;
+      saveData.userPassword = this.userPassword;
+    
+    try {
+      this.$axios
+        .post("http://3.34.149.238:8080/api/basic/login", {
+          userId : saveData.userId,
+          userPassword : saveData.userPassword
+        })
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+  },
   },
 };
 </script>
@@ -59,7 +94,7 @@ export default {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Jua&family=Patrick+Hand&family=Poor+Story&family=Shadows+Into+Light&display=swap");
 .background {
-  height:1400px;
+  height: 1400px;
   display: flex;
   align-items: center;
   padding-top: 40px;
