@@ -2,7 +2,7 @@
   <div class="background">
     <main class="form-signin w-100 m-auto">
       <div class="wrapper">
-        <form>
+        <form v-on:submit.prevent="submitForm">
           <router-link to="/main" class="MG">Micro Garden</router-link>
           <br />
           <h4 class="h5 mb-3 fw-normal">로그인</h4>
@@ -23,7 +23,7 @@
               class="form-control"
               id="floatingPassword"
               placeholder="Password"
-              v-model="password"
+              v-model="userPassword"
             />
             <label for="floatingPassword">비밀번호</label>
           </div>
@@ -33,11 +33,7 @@
               <input type="checkbox" value="remember-me" /> 아이디 기억
             </label>
           </div>
-          <button
-            class="w-100 btn btn-lg btn-primary"
-            @click="loginSubmit"
-            type="submit"
-          >
+          <button class="w-100 btn btn-lg btn-primary" type="submit">
             로그인
           </button>
 
@@ -46,7 +42,6 @@
           <p class="mt-5 mb-3 text-muted">&copy; 2022–2022</p>
         </form>
         <br />
-     
       </div>
     </main>
   </div>
@@ -68,17 +63,16 @@ export default {
     };
   },
   methods: {
-    loginSubmit() {
-      let saveData = {};
-      saveData.userId = this.userId;
-      saveData.userPassword = this.userPassword;
-    
-    try {
-      this.$axios
-        .post("http://3.34.149.238:8080/api/basic/login", {
-          userId : saveData.userId,
-          userPassword : saveData.userPassword
-        })
+    submitForm: function () {
+      console.log(this.userId);
+      console.log(this.userPassword);
+      let url = "http://3.34.149.238:8080/api/basic/login";
+      let data = {
+       "userId": this.userId,
+        "userPassword": this.userPassword,
+      };
+      axios
+        .post(url, data)
         .then((res) => {
           console.log(res);
         })
@@ -86,7 +80,6 @@ export default {
           console.log(err);
         });
     },
-  },
   },
 };
 </script>
