@@ -37,10 +37,7 @@
             로그인
           </button>
           <router-link to="/signin">
-            <button
-              @click="signIn"
-              class="w-100 btn btn-lg btn-warning"
-            >
+            <button @click="signIn" class="w-100 btn btn-lg btn-dark">
               회원가입
             </button>
           </router-link>
@@ -69,7 +66,6 @@ export default {
     };
   },
   methods: {
-    signIn() {},
     submitForm: function () {
       console.log(this.userId);
       console.log(this.userPassword);
@@ -81,6 +77,9 @@ export default {
       axios
         .post(url + "/api/basic/login", data)
         .then((res) => {
+          this.$router.push({
+            path: "/main",
+          });
           let token = res.data.accessToken;
           let config = {
             headers: {
