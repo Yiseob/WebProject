@@ -36,14 +36,14 @@
           <button class="w-100 btn btn-lg btn-primary" type="submit">
             로그인
           </button>
-          
-          <button
-            @click="signIn"
-            class="w-100 btn btn-lg btn-warning "
-            type="submit"
-          >
-            회원가입
-          </button>
+          <router-link to="/signin">
+            <button
+              @click="signIn"
+              class="w-100 btn btn-lg btn-warning"
+            >
+              회원가입
+            </button>
+          </router-link>
           <!-- <LoginKakao /> -->
           <p class="mt-5 mb-3 text-muted">&copy; 2022–2022</p>
         </form>
@@ -69,6 +69,7 @@ export default {
     };
   },
   methods: {
+    signIn() {},
     submitForm: function () {
       console.log(this.userId);
       console.log(this.userPassword);
@@ -160,9 +161,8 @@ export default {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-button{
-margin-top: 5px;  
-margin-bottom: 5px;  
-
+button {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 </style>

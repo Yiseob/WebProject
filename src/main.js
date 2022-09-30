@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import BootstrapVue3 from 'bootstrap-vue-3'
 import axios from 'axios'
+// import store from './vuex/store'
 
 
 // Optional, since every component import their Bootstrap functionality
@@ -17,6 +18,7 @@ app.use(BootstrapVue3)
 app.use(router)
 app.mount('#app')
 app.use(axios)
-app.prototype.$axios = axios
+// app.use(store)
 
 window.Kakao.init('424f2da784ec819e556030a2493f9039');
+Vue.prototype.$axios = axios
