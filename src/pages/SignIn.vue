@@ -39,6 +39,7 @@
               class="form-control is-invalid"
               id="inputInvalid"
               placeholder="Password"
+              required
             />
             <label for="inputInvalid">비밀번호 재확인</label>
             <div class="invalid-feedback">비밀번호가 일치하지 않습니다</div>
@@ -110,10 +111,8 @@ let password = document.getElementById("inputValid");
 let confirm = document.getElementById("inputInvalid");
 
 function validPassword(){
-  if(password !== confirm){
-    document.getElementsByClassName('is-invalid') 
-  }else{
-    red.class = green.class
+  if(password == confirm){
+    document.getElementsByClassName('is-invalid').className = "is-valid"
   }
 }
 
