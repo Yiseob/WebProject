@@ -4,6 +4,8 @@
     <br />
     <MainBody />
     <br />
+    <Store />
+    <br />
     <Cards />
     <br />
     <Footer />
@@ -15,6 +17,7 @@ import NavBar from "@/components/Main/NavBar.vue";
 import Cards from "@/components/Main/Cards.vue";
 import MainBody from "@/components/Main/MainBody.vue";
 import Footer from "@/components/Main/Footer.vue";
+import Store from "@/components/Main/Store.vue";
 
 export default {
   name: "MainComponent",
@@ -23,6 +26,7 @@ export default {
     Cards,
     MainBody,
     Footer,
+    Store,
   },
 };
 </script>

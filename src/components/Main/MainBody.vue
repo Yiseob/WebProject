@@ -5,8 +5,6 @@
       img-src="./Main.jpg"
       img-alt="Card Image"
       text-variant="white"
-     
-     
     >
       <b-card-text class="String"> Micro Garden </b-card-text>
     </b-card>
@@ -18,21 +16,21 @@ export default {
   name: "MainBody",
 };
 </script>
+
+
+
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
-</style>
-
-<style scoped>
 
 .Image {
-  margin: 40px 100px 40px 100px;
+  margin: 0;
   text-align: center;
 }
 .String{
   font-family: 'Shadows Into Light', cursive;
   font-size: 150px;
   line-height: 450px;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 
