@@ -54,14 +54,17 @@
             <div class="form-floating mb-2">
               <input
                 type="password"
-                class="form-control is-invalid"
+                :class="'form-control ' + getPasswordClass()"
                 id="inputInvalid"
                 placeholder="Password"
                 autocomplete="off"
                 v-model="passwordchk"
+                @keyup="checkPassword"
               />
               <label for="inputInvalid">비밀번호 재확인</label>
-              <div class="invalid-feedback">비밀번호가 일치하지 않습니다</div>
+              <div v-if="!passwordConfirm" class="invalid-feedback">
+                <span>비밀번호가 일치하지 않습니다</span>
+              </div>
             </div>
           </div>
           <!-- 비밀번호끝 -->
@@ -99,11 +102,13 @@
             <input
               type="text"
               class="post1 form-control"
-              id="floatingInput"
+              id="postcode"
               placeholder="우편번호"
-              v-model="postnum"
+              name="postcode"
+              v-model="postCode"
               autocomplete="off"
-              aria-readonly="true"
+              disabled
+              style="background: white"
             />
             <label for="floatingInput">우편번호</label>
           </div>
@@ -125,14 +130,16 @@
               v-model="address"
               class="post2 form-control"
               placeholder="도로명 주소"
-              id="floatingInput"
+              name="address"
+              id="address"
               autocomplete="off"
-              aria-readonly="true"
+              disabled
+              style="background: white"
             />
             <label for="floatingInput">도로명 주소</label>
           </div>
           <!-- 주소 -->
-     
+
           <div class="form-floating mb-2">
             <input
               type="text"
@@ -141,7 +148,7 @@
               placeholder="상세 주소"
               id="floatingInput"
               autocomplete="off"
-              aria-readonly="true"
+              required
             />
             <label for="floatingInput">상세 주소</label>
           </div>
@@ -165,9 +172,21 @@ export default {
       name: "",
       password: "",
       passwordchk: "",
+      passwordConfirm: true,
       birth: "",
       tel: "",
+      postCode: "",
+      address: "",
     };
+  },
+
+  mounted() {
+    let recaptchaScript = document.createElement("script");
+    recaptchaScript.setAttribute(
+      "src",
+      "https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"
+    );
+    document.head.appendChild(recaptchaScript);
   },
   methods: {
     submitForm: function () {
@@ -179,6 +198,38 @@ export default {
         tel: this.tel,
       };
       console.log(data);
+    },
+    execDaumPostcode: function () {
+      var vm = this; //그냥 this를 쓰면 안댐
+      daum.postcode.load(function () {
+        new daum.Postcode({
+          oncomplete: function (data) {
+            vm.postCode = data.zonecode;
+            vm.address = data.roadAddress;
+          },
+        }).open();
+      });
+    },
+    getPasswordClass() {
+      // (passwordConfirm ? 'is-valid' : 'is-invalid')
+      var vm = this;
+      if (vm.password.length < 1 || vm.passwordchk.length < 1) {
+        return "is-normal";
+      } else if (vm.password == vm.passwordchk) {
+        return "is-valid";
+      } else {
+        return "is-invalid";
+      }
+    },
+    checkPassword(e) {
+      var vm = this;
+      var text = e.target.value;
+      vm.passwordchk = text;
+      if (text === vm.password) {
+        vm.passwordConfirm = true;
+      } else {
+        vm.passwordConfirm = false;
+      }
     },
   },
 };
@@ -204,6 +255,6 @@ let confirm = document.getElementById("inputInvalid");
 .postcode-btn {
   float: right;
   width: 47%;
-  margin: auto;
+  margin-top: 5px;
 }
 </style>
