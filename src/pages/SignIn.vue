@@ -94,7 +94,7 @@
             />
             <label for="floatingInput">휴대전화</label>
           </div>
-          <br />
+        
           <label class="form-label" mt-2>주소</label>
           <br />
           <!-- 주소 -->

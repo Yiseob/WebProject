@@ -42,6 +42,8 @@ export default {
   background-color: lightsteelblue;
   height: auto;
   padding: 30px;
+  box-sizing: border-box;
+
 }
 .Cards {
   text-align: center;

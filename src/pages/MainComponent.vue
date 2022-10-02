@@ -1,7 +1,6 @@
 <template>
   <div>
     <NavBar />
-    <br />
     <MainBody />
     <br />
     <Store />
