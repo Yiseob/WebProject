@@ -27,21 +27,21 @@
                 type="email"
                 class="form-control"
                 id="floatingInput"
-                placeholder="name@example.com"
+                placeholder="이메일 주소"
                 v-model="email"
                 autocomplete="off"
               />
               <label for="floatingInput">이메일 주소</label>
             </div>
           </div>
-          <br />
+
           <!-- 비밀번호 -->
           <div class="pw">
             <label class="form-label" mt-2>비밀번호</label>
             <div class="form-floating mb-2">
               <input
                 type="password"
-                class="form-control is-valid"
+                :class="'form-control ' + getPasswordClass()"
                 id="inputValid"
                 placeholder="Password"
                 v-model="password"
@@ -54,7 +54,7 @@
             <div class="form-floating mb-2">
               <input
                 type="password"
-                :class="'form-control ' + getPasswordClass()"
+                :class="'form-control ' + checkPasswordClass()"
                 id="inputInvalid"
                 placeholder="Password"
                 autocomplete="off"
@@ -71,16 +71,46 @@
 
           <!-- 생년 월일 -->
           <label class="form-label" mt-2>생년월일</label>
-          <div class="form-floating mb-2">
-            <input
-              type="date"
-              min="1900-01-01"
-              max="2022-12-31"
-              class="form-control"
-              v-model="birth"
-              id="floatingInput"
-              autocomplete="off"
-            />
+          <div class="birth form-floating mb-2">
+            <div class="year form-floating mb-2">
+              <input
+                type="text"
+                class="form-control"
+                v-model="birthYear"
+                placeholder="년"
+                id="floatingInput"
+                autocomplete="off"
+                maxlength="4"
+                pattern="[0-9]+"
+              />
+              <label for="floatingInput">년</label>
+            </div>
+            <div class="month form-floating mb-2">
+              <input
+                type="text"
+                class="form-control"
+                v-model="birthMonth"
+                placeholder="월"
+                id="floatingInput"
+                autocomplete="off"
+                maxlength="2"
+                pattern="[0-9]+"
+              />
+              <label for="floatingInput">월</label>
+            </div>
+            <div class="day form-floating mb-2">
+              <input
+                type="text"
+                class="form-control"
+                v-model="birthDay"
+                placeholder="일"
+                id="floatingInput"
+                autocomplete="off"
+                maxlength="2"
+                pattern="[0-9]+"
+              />
+              <label for="floatingInput">일</label>
+            </div>
           </div>
           <label class="form-label" mt-2>연락처</label>
           <div class="form-floating mb-2">
@@ -91,10 +121,12 @@
               placeholder="휴대전화"
               id="floatingInput"
               autocomplete="off"
+              maxlength="11"
+              pattern="[0-9]+"
             />
             <label for="floatingInput">휴대전화</label>
           </div>
-        
+
           <label class="form-label" mt-2>주소</label>
           <br />
           <!-- 주소 -->
@@ -196,6 +228,8 @@ export default {
         password: this.password,
         birth: this.birth,
         tel: this.tel,
+        postcode: this.postCode,
+        address: this.address,
       };
       console.log(data);
     },
@@ -211,7 +245,14 @@ export default {
       });
     },
     getPasswordClass() {
-      // (passwordConfirm ? 'is-valid' : 'is-invalid')
+      var vm = this;
+      if (vm.password.length < 1) {
+        return "is-normal";
+      } else if (vm.password.length > 1) {
+        return "is-valid";
+      }
+    },
+    checkPasswordClass() {
       var vm = this;
       if (vm.password.length < 1 || vm.passwordchk.length < 1) {
         return "is-normal";
@@ -244,6 +285,20 @@ let confirm = document.getElementById("inputInvalid");
 }
 .birth {
   vertical-align: middle;
+  display: flex;
+}
+.year {
+  flex: 1;
+  margin-right: 5px;
+}
+.month {
+  flex: 1;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.day {
+  flex: 1;
+  margin-left: 5px;
 }
 .telephone {
   margin-bottom: 20px;
