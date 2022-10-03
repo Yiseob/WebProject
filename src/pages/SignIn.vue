@@ -41,13 +41,19 @@
             <div class="form-floating mb-2">
               <input
                 type="password"
-                :class="'form-control ' + getPasswordClass()"
+                :class="'form-control ' + confirmPasswordClass()"
                 id="inputValid"
                 placeholder="Password"
                 v-model="password"
+                @keyup="confirmPassword"
               />
               <label for="inputValid">비밀번호 입력</label>
-              <div class="valid-feedback"></div>
+              <div v-if="!passwordConfirm" class="invalid-feedback">
+                <span
+                  >문자, 숫자, 특수문자를 포함하여 8자리 이상 20자리 이하로
+                  설정해주세요
+                </span>
+              </div>
             </div>
           </div>
           <div class="pwchk">
@@ -62,7 +68,7 @@
                 @keyup="checkPassword"
               />
               <label for="inputInvalid">비밀번호 재확인</label>
-              <div v-if="!passwordConfirm" class="invalid-feedback">
+              <div v-if="!passwordCheck" class="invalid-feedback">
                 <span>비밀번호가 일치하지 않습니다</span>
               </div>
             </div>
@@ -261,11 +267,17 @@ export default {
         }).open();
       });
     },
-    getPasswordClass() {
+    confirmPasswordClass() {
+      const regpassword =
+        /(?=.*\d{1,50})(?=.*[~`!@#$%\^&*()-+=]{1,50})(?=.*[a-zA-Z]{2,50}).{8,20}$/;
       var vm = this;
       if (vm.password.length < 1) {
         return "is-normal";
-      } else if (vm.password.length > 1) {
+      } else if (vm.password.length < 8 || vm.password.length > 20) {
+        return "is-invalid";
+      } else if (!regpassword.test(vm.password)) {
+        return "is-invalid";
+      } else {
         return "is-valid";
       }
     },
@@ -284,9 +296,23 @@ export default {
       var text = e.target.value;
       vm.passwordchk = text;
       if (text === vm.password) {
-        vm.passwordConfirm = true;
+        vm.passwordCheck = true;
       } else {
+        vm.passwordCheck = false;
+      }
+    },
+    confirmPassword(e) {
+      const regpassword =
+        /(?=.*\d{1,50})(?=.*[~`!@#$%\^&*()-+=]{1,50})(?=.*[a-zA-Z]{1,50}).{8,20}$/;
+      var vm = this;
+      var text = e.target.value;
+      vm.password = text;
+      if (!regpassword.test(text)) {
         vm.passwordConfirm = false;
+      } else if (text.length > 20 || text.length < 8) {
+        vm.passwordConfirm = false;
+      } else {
+        vm.passwordConfirm = true;
       }
     },
   },
