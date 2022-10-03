@@ -123,6 +123,7 @@
               autocomplete="off"
               maxlength="11"
               pattern="[0-9]+"
+              required
             />
             <label for="floatingInput">휴대전화</label>
           </div>
@@ -162,7 +163,7 @@
               v-model="address"
               class="post2 form-control"
               placeholder="도로명 주소"
-              name="address"
+              name="street"
               id="address"
               autocomplete="off"
               disabled
@@ -175,7 +176,7 @@
           <div class="form-floating mb-2">
             <input
               type="text"
-              v-model="detailAddress"
+              v-model="detail"
               class="post3 form-control"
               placeholder="상세 주소"
               id="floatingInput"
@@ -222,16 +223,32 @@ export default {
   },
   methods: {
     submitForm: function () {
+      let url = "http://3.34.149.238:8080";
+      let birthDate =
+        this.birthYear + "-" + this.birthMonth + "-" + this.birthDay;
+
       let data = {
-        email: this.email,
-        name: this.name,
+        birthDate: birthDate,
+        memberName: this.name,
         password: this.password,
-        birth: this.birth,
-        tel: this.tel,
-        postcode: this.postCode,
-        address: this.address,
+        contact: this.tel,
+        email: this.email,
+        homeAddress: {
+          detail: this.detail,
+          street: this.address,
+          zipcode: this.postCode,
+        },
       };
       console.log(data);
+      axios
+        .post(url + "/api/basic/signup", data)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+          alert("회원가입에 실패하였습니다.");
+        });
     },
     execDaumPostcode: function () {
       var vm = this; //그냥 this를 쓰면 안댐
