@@ -1,7 +1,12 @@
 <template>
   <div>
     <NavBar />
-    <br />
+
+    <div class="header">
+      <span class="title">질문 게시판</span>
+      <hr class="featurette-divider" />
+    </div>
+
     <div class="Board">
       <b-table
         striped
@@ -10,7 +15,7 @@
         :fields="fields"
         @row-clicked="rowClick"
       ></b-table>
-      <br>
+      <br />
       <b-button @click="writeContent">글쓰기</b-button>
     </div>
   </div>
@@ -75,6 +80,21 @@ export default {
 };
 </script>
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Jua&family=Patrick+Hand&family=Poor+Story&family=Shadows+Into+Light&display=swap");
+
+.header {
+  margin-top: 50px;
+  margin-left: 230px;
+  margin-right: 230px;
+}
+.featurette-divider {
+  margin-top: 5px;
+}
+.title {
+  font-family: "Jua", sans-serif;
+  font-size: 50px;
+  font-weight:200;
+}
 .Board {
   text-align: center;
   margin-top: 50px;

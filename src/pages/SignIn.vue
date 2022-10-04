@@ -16,6 +16,7 @@
                 placeholder="이름"
                 v-model="name"
                 autocomplete="off"
+                required
               />
               <label for="floatingInput">이름</label>
             </div>
@@ -30,6 +31,7 @@
                 placeholder="이메일 주소"
                 v-model="email"
                 autocomplete="off"
+                required
               />
               <label for="floatingInput">이메일 주소</label>
             </div>
@@ -46,6 +48,7 @@
                 placeholder="Password"
                 v-model="password"
                 @keyup="confirmPassword"
+                required
               />
               <label for="inputValid">비밀번호 입력</label>
               <div v-if="!passwordConfirm" class="invalid-feedback">
@@ -66,6 +69,7 @@
                 autocomplete="off"
                 v-model="passwordchk"
                 @keyup="checkPassword"
+                required
               />
               <label for="inputInvalid">비밀번호 재확인</label>
               <div v-if="!passwordCheck" class="invalid-feedback">
@@ -88,6 +92,7 @@
                 autocomplete="off"
                 maxlength="4"
                 pattern="[0-9]+"
+                required
               />
               <label for="floatingInput">년</label>
             </div>
@@ -101,6 +106,7 @@
                 autocomplete="off"
                 maxlength="2"
                 pattern="[0-9]+"
+                required
               />
               <label for="floatingInput">월</label>
             </div>
@@ -114,6 +120,7 @@
                 autocomplete="off"
                 maxlength="2"
                 pattern="[0-9]+"
+                required
               />
               <label for="floatingInput">일</label>
             </div>
@@ -148,6 +155,7 @@
               autocomplete="off"
               disabled
               style="background: white"
+              required
             />
             <label for="floatingInput">우편번호</label>
           </div>
@@ -174,6 +182,7 @@
               autocomplete="off"
               disabled
               style="background: white"
+              required
             />
             <label for="floatingInput">도로명 주소</label>
           </div>
@@ -203,6 +212,8 @@
   </div>
 </template>
 <script>
+import axios from "axios";
+
 export default {
   name: "SignIn",
   data() {
@@ -249,6 +260,10 @@ export default {
       axios
         .post(url + "/api/basic/signup", data)
         .then((res) => {
+          this.$router.push({
+            path: "/main",
+          });
+          alert(this.name + "님, 환영합니다.");
           console.log(res);
         })
         .catch((err) => {
