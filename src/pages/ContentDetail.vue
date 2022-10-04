@@ -1,6 +1,10 @@
 <template>
   <div>
     <NavBar />
+    <div class="header">
+      <span class="detail">질문 게시판</span>
+      <hr class="featurette-divider" />
+    </div>
     <b-card class="body">
       <div class="content-detail-content-info">
         <div class="content-detail-content-info-left">
@@ -74,11 +78,14 @@ export default {
 };
 </script>
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Jua&family=Patrick+Hand&family=Poor+Story&family=Shadows+Into+Light&display=swap");
+
 .body {
   text-align: center;
-  margin-top: 70px;
-  margin-left: 200px;
-  margin-right: 200px;
+  margin-top: 50px;
+  margin-left: 350px;
+  margin-right: 350px;
+  font-family: "Jua", sans-serif;
 }
 
 .content-detail-content-info {
@@ -97,7 +104,7 @@ export default {
   margin-left: 70px;
 }
 .title {
-font-size: 20px;
+  font-size: 20px;
 }
 
 .content-detail-content-info-right {
@@ -126,5 +133,18 @@ font-size: 20px;
   border: 1px solid black;
   margin-top: 1rem;
   padding: 2rem;
+}
+.header {
+  margin-top: 50px;
+  margin-left: 350px;
+  margin-right: 350px;
+}
+.featurette-divider {
+  margin-top: 5px;
+}
+.detail {
+  font-family: "Jua", sans-serif;
+  font-size: 50px;
+  font-weight: 200;
 }
 </style>

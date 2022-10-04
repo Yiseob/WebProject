@@ -1,28 +1,41 @@
 <template>
   <div>
     <NavBar />
+    <div class="header">
+      <span class="question">질문 작성</span>
+      <hr class="featurette-divider" />
+    </div>
+
     <div class="body">
-      <div class="title">
-        <b-form-input
+      <div class="mb-2">
+        <input
+          type="text"
+          class="title form-control"
+          id="floatingInput"
+          placeholder="글 제목"
           v-model="subject"
-          placeholder="제목을 입력해주세요"
-          size="lg"
-          rows="1"
-          max-rows="3"
-        ></b-form-input>
+          autocomplete="off"
+          required
+        />
       </div>
-      <div class="content">
-        <b-form-textarea
+      <div class="mb-2">
+        <input
+          type="text"
+          class="content form-control"
+          id="floatingInput"
+          placeholder="글 내용"
           v-model="context"
-          placeholder="내용을 입력해주세요"
-          rows="6"
-          max-rows="10"
-        ></b-form-textarea>
+          autocomplete="off"
+          required
+        />
       </div>
-      <b-button @click="updateMode ? updateContent() : uploadContent()"
+      <br />
+      <b-button
+        class="save"
+        @click="updateMode ? updateContent() : uploadContent()"
         >저장</b-button
       >
-      <b-button @click="cancel">취소</b-button>
+      <b-button class="cancel" @click="cancel">취소</b-button>
     </div>
   </div>
 </template>
@@ -91,11 +104,40 @@ export default {
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Jua&family=Patrick+Hand&family=Poor+Story&family=Shadows+Into+Light&display=swap");
+
 .body {
   text-align: center;
   margin-left: 350px;
   margin-right: 350px;
-  margin-top: 100px;
+  margin-top: 50px;
+  font-family: "Jua", sans-serif;
+}
+.title {
+  height: 100px;
+  margin-bottom: 50px;
+}
+.content {
+  height: 400px;
+}
+.header {
+  margin-top: 50px;
+  margin-left: 350px;
+  margin-right: 350px;
+}
+.featurette-divider {
+  margin-top: 5px;
+}
+.question {
+  font-family: "Jua", sans-serif;
+  font-size: 50px;
+  font-weight: 200;
+}
+.save {
+  margin: 5px;
+}
+.cancel {
+  margin: 5px;
 }
 </style>
 

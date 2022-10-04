@@ -9,7 +9,6 @@
 
     <div class="Board">
       <b-table
-        striped
         hover
         :items="items"
         :fields="fields"
@@ -54,12 +53,12 @@ export default {
           label: "제목",
         },
         {
-          key: "created_at",
-          label: "작성일",
+          key: "user_name",
+          label: "작성자",
         },
         {
-          key: "user_name",
-          label: "글쓴이",
+          key: "created_at",
+          label: "작성일",
         },
       ],
       items: items,
@@ -84,8 +83,8 @@ export default {
 
 .header {
   margin-top: 50px;
-  margin-left: 230px;
-  margin-right: 230px;
+  margin-left: 350px;
+  margin-right: 350px;
 }
 .featurette-divider {
   margin-top: 5px;
@@ -93,12 +92,13 @@ export default {
 .title {
   font-family: "Jua", sans-serif;
   font-size: 50px;
-  font-weight:200;
+  font-weight: 200;
 }
 .Board {
   text-align: center;
   margin-top: 50px;
-  margin-left: 230px;
-  margin-right: 230px;
+  margin-left: 350px;
+  margin-right: 350px;
+  font-family: "Jua", sans-serif;
 }
 </style>
