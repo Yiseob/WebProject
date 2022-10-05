@@ -10,7 +10,8 @@
             justify-content-center justify-content-lg-start
           "
         >
-          <router-link to="/main"
+          <router-link
+            to="/main"
             class="
               d-flex
               align-items-center
@@ -33,7 +34,7 @@
             "
           >
             <li>
-              <router-link to="/main" class="nav-link text-secondary">
+              <router-link to="/main" :class="isMain()">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -50,7 +51,7 @@
               </router-link>
             </li>
             <li>
-              <router-link to="/board/free" class="nav-link text-white">
+              <router-link to="/board/free" :class="isBoard()">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -84,7 +85,7 @@
               </a>
             </li>
             <li>
-              <router-link to="/products" class="nav-link text-white">
+              <router-link to="/products" :class="isProducts()">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -101,9 +102,7 @@
               </router-link>
             </li>
             <li v-if="isSigned">
-              <router-link to="/login"
-                class="nav-link text-white"
-              >
+              <router-link to="/login" class="nav-link text-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -116,13 +115,11 @@
                     d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"
                   />
                 </svg>
-                Customers
+                My Page
               </router-link>
             </li>
             <li v-else>
-              <router-link to="/login"
-                class="nav-link text-white"
-              >
+              <router-link to="/login" class="nav-link text-white">
                 Login
               </router-link>
             </li>
@@ -139,8 +136,34 @@ export default {
   data() {
     return {
       isSigned: true,
-    }
-  }
+    };
+  },
+  methods: {
+    isBoard() {
+      let router = this.$route;
+      if (router.path.includes("/board/free") == true) {
+        return "nav-link text-secondary";
+      } else {
+        return "nav-link text-white";
+      }
+    },
+    isMain() {
+      let router = this.$route;
+      if (router.path.includes("/main") == true) {
+        return "nav-link text-secondary";
+      } else {
+        return "nav-link text-white";
+      }
+    },
+   isProducts() {
+      let router = this.$route;
+      if (router.path.includes("/products") == true) {
+        return "nav-link text-secondary";
+      } else {
+        return "nav-link text-white";
+      }
+    },
+  },
 };
 </script>
 

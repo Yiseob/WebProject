@@ -1,7 +1,8 @@
 <template>
-  <div class="Image">
+  <div class="body">
     <b-card
       overlay
+      class="Image"
       img-src="./Main.jpg"
       img-alt="Card Image"
       text-variant="white"
@@ -26,11 +27,16 @@ export default {
 .Image {
   margin: 0;
   text-align: center;
+  opacity: 0.7;
 }
+
 .String {
   font-family: "Shadows Into Light", cursive;
   font-size: 150px;
   line-height: 450px;
   font-weight: 400;
+
+
+  color: black;
 }
 </style>

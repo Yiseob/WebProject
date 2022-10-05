@@ -257,19 +257,23 @@ export default {
         },
       };
       console.log(data);
-      axios
-        .post(url + "/api/basic/signup", data)
-        .then((res) => {
-          this.$router.push({
-            path: "/main",
+      if (this.passwordCheck == true) {
+        axios
+          .post(url + "/api/basic/signup", data)
+          .then((res) => {
+            this.$router.push({
+              path: "/main",
+            });
+            alert(this.name + "님, 환영합니다.");
+            console.log(res);
+          })
+          .catch((err) => {
+            console.log(err);
+            alert("회원가입에 실패하였습니다.");
           });
-          alert(this.name + "님, 환영합니다.");
-          console.log(res);
-        })
-        .catch((err) => {
-          console.log(err);
-          alert("회원가입에 실패하였습니다.");
-        });
+      } else if (this.passwordCheck == false) {
+        alert("비밀번호가 일치하지 않습니다.");
+      }
     },
     execDaumPostcode: function () {
       var vm = this; //그냥 this를 쓰면 안댐

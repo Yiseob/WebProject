@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <transition name="fade"> <router-view /> </transition>
   </div>
 </template>
 
@@ -8,7 +8,6 @@
 export default {
   name: "App",
 };
-
 </script>
 
 <style>
@@ -18,6 +17,17 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   margin-top: 0px;
+}
+.v-enter-active{
+  transition: opacity 1s ease;
+}
+.v-leave-active {
+  transition: opacity 1s ease;
+}
+
+.v-enter,
+.v-leave-to {
+  opacity: 0.5;
 }
 
 a {

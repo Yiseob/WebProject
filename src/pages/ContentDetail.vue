@@ -6,30 +6,30 @@
       <hr class="featurette-divider" />
     </div>
     <b-card class="body">
-      <div class="content-detail-content-info">
+      <div class="content-detail-content-info form-control">
         <div class="content-detail-content-info-left">
           <div class="content-detail-content-info-left-number">
-            글 번호 : {{ contentId }}
+            No : {{ contentId }}
           </div>
           <div class="content-detail-content-info-left-subject">
-            제목 : {{ title }}
+          <span class="title"> {{ title }} </span>
           </div>
         </div>
         <div class="content-detail-content-info-right">
           <div class="content-detail-content-info-right-user">
-            글쓴이: {{ user }}
+           <span> 작성자: </span> <span class="user">{{ user }}</span>
           </div>
           <div class="content-detail-content-info-right-created">
-            등록일: {{ created }}
+           {{ created }}
           </div>
         </div>
       </div>
-      <div class="content-detail-content">
+      <div class="content-detail-content form-control">
         {{ context }}
       </div>
       <div class="content-detail-button">
-        <b-button variant="primary" @click="updateData">수정</b-button>
-        <b-button variant="success" @click="deleteData">삭제</b-button>
+        <b-button class="update" variant="primary" @click="updateData">수정</b-button>
+        <b-button class="delete" variant="success" @click="deleteData">삭제</b-button>
       </div>
       <div class="content-detail-comment">덧글</div>
     </b-card>
@@ -90,6 +90,7 @@ export default {
 
 .content-detail-content-info {
   border: 1px solid black;
+  height: 100px;
   display: flex;
   justify-content: space-between;
 }
@@ -101,10 +102,13 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  margin-left: 70px;
 }
 .title {
-  font-size: 20px;
+  font-size: 30px;
+  margin-right: 50px;
+}
+.user{
+  font-size: 25px;
 }
 
 .content-detail-content-info-right {
@@ -120,7 +124,7 @@ export default {
   border: 1px solid black;
   margin-top: 1rem;
   padding-top: 1rem;
-  min-height: 720px;
+  height: 400px;
 }
 
 .content-detail-button {
@@ -146,5 +150,11 @@ export default {
   font-family: "Jua", sans-serif;
   font-size: 50px;
   font-weight: 200;
+}
+.update {
+  margin: 5px;
+}
+.delete {
+  margin: 5px;
 }
 </style>
