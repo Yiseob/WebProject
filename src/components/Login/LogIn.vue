@@ -53,7 +53,7 @@
 <script>
 // import LoginKakao from "./Kakao.vue";
 import axios from "axios";
-import { mapState, mapActions } from "vuex";
+import { useStore } from "vuex";
 
 export default {
   name: "LogIn",
@@ -66,19 +66,22 @@ export default {
       password: "",
     };
   },
+	mounted() {
+		const store = useStore();
+		console.log(store.state.token);
+	},
   methods: {
     submitForm: function () {
-      console.log(this.userId);
-      console.log(this.userPassword);
+			var vm = this;
       let url = "http://3.34.149.238:8080";
       let data = {
-        email: this.userId,
-        password: this.userPassword,
+        email: vm.userId,
+        password: vm.userPassword,
       };
       axios
         .post(url + "/api/basic/login", data)
         .then((res) => {
-          this.$router.push({
+          vm.$router.push({
             path: "/main",
           });
 
@@ -92,8 +95,8 @@ export default {
             .get(url + "/api/member/info", config)
             .then((response) => {
               console.log(response);
-              this.$store.dispatch("setToken", token);
-              console.log(this.$store.token)
+							console.log(vm.$store);
+              vm.$store.dispatch("setToken", token);
             })
             .catch((error) => {
               console.log(error);
