@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import { createStore } from 'vuex'
+import createPersistedState from "vuex-persistedstate";
 
 
 export default createStore({
@@ -10,7 +11,7 @@ export default createStore({
 
     mutations: {  // commit 으로 부를 수 있다.
         setToken(state, _token) {
-            state.token = 'Bearer '+ _token;
+            state.token = 'Bearer ' + _token;
             state.isLogin = true
         }
     },
@@ -18,6 +19,7 @@ export default createStore({
         setToken: ({ commit }, _token) => {
             commit('setToken', _token);
         }
-    }
+    },
+    plugins: [createPersistedState()],
 }
 );
