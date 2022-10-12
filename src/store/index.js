@@ -1,8 +1,8 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+import { createApp } from 'vue'
+import { createStore } from 'vuex'
 
 
-export default new Vuex.Store({
+export default createStore({
     state: {
         token: null,
         isLogin: false
@@ -10,7 +10,7 @@ export default new Vuex.Store({
 
     mutations: {  // commit 으로 부를 수 있다.
         setToken(state, _token) {
-            state.token = _token;
+            state.token = 'Bearer '+ _token;
             state.isLogin = true
         }
     },
