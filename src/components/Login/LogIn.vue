@@ -53,6 +53,7 @@
 <script>
 // import LoginKakao from "./Kakao.vue";
 import axios from "axios";
+import { mapState, mapActions } from "vuex";
 
 export default {
   name: "LogIn",
@@ -80,6 +81,7 @@ export default {
           this.$router.push({
             path: "/main",
           });
+
           let token = res.data.accessToken;
           let config = {
             headers: {
@@ -90,6 +92,8 @@ export default {
             .get(url + "/api/member/info", config)
             .then((response) => {
               console.log(response);
+              this.$store.dispatch("setToken", token);
+              console.log(this.$store.token)
             })
             .catch((error) => {
               console.log(error);
@@ -98,7 +102,7 @@ export default {
         })
         .catch((err) => {
           console.log(err);
-          alert("회원정보가 일치하지 않습니다.")
+          alert("회원정보가 일치하지 않습니다.");
         });
     },
   },

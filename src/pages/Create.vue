@@ -43,6 +43,7 @@
 <script>
 import NavBar from "@/components/Main/NavBar.vue";
 import data from "@/data";
+import axios from "axios";
 
 export default {
   name: "Create",
@@ -76,21 +77,40 @@ export default {
       });
     },
     uploadContent() {
-      let items = data.Content.sort((a, b) => {
-        return b.content_id - a.content_id;
-      });
-      const content_id = items[0].content_id + 1;
-      data.Content.push({
-        content_id: content_id,
-        user_id: this.userId,
+      let url = "http://3.34.149.238:8080";
+      let data = {
+        accessLevel: "PUBLIC",
+        content: this.context,
         title: this.subject,
-        context: this.context,
-        created_at: this.createdAt,
-        updated_at: null,
-      });
-      this.$router.push({
-        path: "/board/free/",
-      });
+      };
+      axios
+        .post(url + "/api/question", data)
+        .then((res) => {
+          alert("문의글이 등록되었습니다")
+          this.$router.push({
+            path: "/board/free/",
+          });
+        })
+        .catch((err) => {
+          console.log(err);
+          alert("문의글 게시에 실패했습니다.");
+        });
+
+      // let items = data.Content.sort((a, b) => {
+      //   return b.content_id - a.content_id;
+      // });
+      // // 글 번호 역순으로 배열 처리
+      // const content_id = items[0].content_id + 1;
+      // // 지금 등록하는 글의 글 번호
+      // data.Content.push({
+      //   content_id: content_id,
+      //   user_id: this.userId,
+      //   title: this.subject,
+      //   context: this.context,
+      //   created_at: this.createdAt,
+      //   updated_at: null,
+      // });
+   
     },
     updateContent() {
       this.updateObject.title = this.subject;
