@@ -13,11 +13,18 @@ export default createStore({
         setToken(state, _token) {
             state.token = 'Bearer ' + _token;
             state.isLogin = true
+        },
+        logOut(state) {
+            state.token = null;
+            state.isLogin = false
         }
     },
     actions: { // dispatch 로 부를 수 있다.
         setToken: ({ commit }, _token) => {
             commit('setToken', _token);
+        },
+        logOut: ({ commit }) => {
+            commit('logOut');
         }
     },
     plugins: [createPersistedState()],

@@ -44,11 +44,15 @@
 import NavBar from "@/components/Main/NavBar.vue";
 import data from "@/data";
 import axios from "axios";
+import { mapState } from "vuex";
 
 export default {
   name: "Create",
   components: {
     NavBar,
+  },
+  computed: {
+    ...mapState(["token"]),
   },
   data() {
     return {
@@ -83,11 +87,18 @@ export default {
         content: this.context,
         title: this.subject,
       };
+      var vm = this;
+      let token = vm.$store.state.token;
+      let config = {
+        headers: {
+          Authorization: token,
+        },
+      };
       axios
-        .post(url + "/api/question", data)
+        .post(url + "/api/question", data, config)
         .then((res) => {
-          alert("문의글이 등록되었습니다")
-          this.$router.push({
+          alert("문의글이 등록되었습니다");
+          vm.$router.push({
             path: "/board/free/",
           });
         })
@@ -110,14 +121,34 @@ export default {
       //   created_at: this.createdAt,
       //   updated_at: null,
       // });
-   
     },
     updateContent() {
-      this.updateObject.title = this.subject;
-      this.updateObject.context = this.context;
-      this.$router.push({
-        path: "/board/free/",
-      });
+      let url = "http://3.34.149.238:8080";
+      let data = {
+        accessLevel: "PUBLIC",
+        content: this.context,
+        questionId: 1,
+        title: this.subject,
+      };
+      var vm = this;
+      let token = vm.$store.state.token;
+      let config = {
+        headers: {
+          Authorization: token,
+        },
+      };
+      axios
+        .patch(url + "/api/question", data, config)
+        .then((res) => {
+          alert("문의글이 수정되었습니다");
+          vm.$router.push({
+            path: "/board/free/",
+          });
+        })
+        .catch((err) => {
+          console.log(err);
+          alert("문의글 수정에 실패했습니다.");
+        });
     },
   },
 };
