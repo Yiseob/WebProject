@@ -42,7 +42,7 @@
 
 <script>
 import NavBar from "@/components/Main/NavBar.vue";
-import data from "@/data";
+import data from "@/data";//서버랑 연결한 후에는 삭제 하자 ㅅㅂ
 import axios from "axios";
 import { mapState } from "vuex";
 
@@ -124,10 +124,11 @@ export default {
     },
     updateContent() {
       let url = "http://3.34.149.238:8080";
+      const contentId = Number(this.$route.params.contentId);
       let data = {
         accessLevel: "PUBLIC",
         content: this.context,
-        questionId: 1,
+        questionId: contentId,
         title: this.subject,
       };
       var vm = this;

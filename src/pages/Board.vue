@@ -23,46 +23,38 @@
 <script>
 import NavBar from "@/components/Main/NavBar.vue";
 import data from "@/data";
+import axios from "axios";
 
 export default {
   name: "Board",
   components: {
     NavBar,
   },
-  data() {
-    let items = data.Content.sort((a, b) => {
-      return b.content_id - a.content_id;
-    });
-    items = items.map((contentItem) => {
-      return {
-        ...contentItem,
-        user_name: data.User.filter(
-          (userItem) => userItem.user_id === contentItem.user_id
-        )[0].name,
-      };
-    });
+
+  data() {  
+
+    //밑에 거 뭐지? 시팔 내가 뭘 작성했던 건지 기억이 안난다.
+    // items = items.map((contentItem) => {
+    //   return {
+    //     ...contentItem,
+    //     user_name: data.User.filter(
+    //       (userItem) => userItem.user_id === contentItem.user_id
+    //     )[0].name,
+    //   };
+    // });
 
     return {
-      fields: [
-        {
-          key: "content_id",
-          label: "글 번호",
-        },
-        {
-          key: "title",
-          label: "제목",
-        },
-        {
-          key: "user_name",
-          label: "작성자",
-        },
-        {
-          key: "created_at",
-          label: "작성일",
-        },
-      ],
-      items: items,
+      fields: ["questionId", "title", "authorName"],
+      items: [],
     };
+  },
+  created() {
+    let url = "http://3.34.149.238:8080";
+    var vm = this;
+    axios.get(url + "/api/question/any/list").then((res) => {
+      this.items = res.data;
+      console.log(res.data);
+    });
   },
   methods: {
     rowClick(item, index, e) {
