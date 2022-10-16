@@ -22,7 +22,6 @@
 
 <script>
 import NavBar from "@/components/Main/NavBar.vue";
-import data from "@/data";
 import axios from "axios";
 
 export default {
@@ -32,17 +31,6 @@ export default {
   },
 
   data() {  
-
-    //밑에 거 뭐지? 시팔 내가 뭘 작성했던 건지 기억이 안난다.
-    // items = items.map((contentItem) => {
-    //   return {
-    //     ...contentItem,
-    //     user_name: data.User.filter(
-    //       (userItem) => userItem.user_id === contentItem.user_id
-    //     )[0].name,
-    //   };
-    // });
-
     return {
       fields: ["questionId", "title", "authorName"],
       items: [],
@@ -52,14 +40,14 @@ export default {
     let url = "http://3.34.149.238:8080";
     var vm = this;
     axios.get(url + "/api/question/any/list").then((res) => {
-      this.items = res.data;
+      vm.items = res.data;
       console.log(res.data);
     });
   },
   methods: {
-    rowClick(item, index, e) {
+    rowClick(item) {
       this.$router.push({
-        path: `/board/free/detail/${item.content_id}`,
+        path: `/board/free/detail/${item.questionId}`,
       });
     },
     writeContent() {

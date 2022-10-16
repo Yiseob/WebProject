@@ -9,27 +9,29 @@
       <div class="content-detail-content-info form-control">
         <div class="content-detail-content-info-left">
           <div class="content-detail-content-info-left-number">
-            No : {{ contentId }}
+            No : {{ this.contentData.questionId }}
           </div>
           <div class="content-detail-content-info-left-subject">
-          <span class="title"> {{ title }} </span>
+            <span class="title"> {{ this.contentData.title }} </span>
           </div>
         </div>
         <div class="content-detail-content-info-right">
           <div class="content-detail-content-info-right-user">
-           <span> 작성자: </span> <span class="user">{{ user }}</span>
-          </div>
-          <div class="content-detail-content-info-right-created">
-           {{ created }}
+            <span> 작성자: </span>
+            <span class="user">{{ this.contentData.authorName }}</span>
           </div>
         </div>
       </div>
       <div class="content-detail-content form-control">
-        {{ context }}
+        {{ this.contentData.content }}
       </div>
       <div class="content-detail-button">
-        <b-button class="update" variant="primary" @click="updateData">수정</b-button>
-        <b-button class="delete" variant="success" @click="deleteData">삭제</b-button>
+        <b-button class="update" variant="primary" @click="updateData"
+          >수정</b-button
+        >
+        <b-button class="delete" variant="success" @click="deleteData"
+          >삭제</b-button
+        >
       </div>
       <div class="content-detail-comment">덧글</div>
     </b-card>
@@ -38,27 +40,34 @@
 
 <script>
 import NavBar from "@/components/Main/NavBar.vue";
-import data from "@/data";
+import axios from "axios";
 
 export default {
   name: "ContentDetail",
   components: {
     NavBar,
   },
+  mounted() {
+    let url = "http://3.34.149.238:8080";
+    var vm = this;
+    let Num = Number(vm.$route.params.questionId);
+    axios
+      .get(url + "/api/question/any/one?questionId=" + Num)
+      .then((res) => {
+        vm.contentData = res.data;
+        console.log(vm.contentData);
+        return vm.contentData;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  },
   data() {
-    const contentId = Number(this.$route.params.contentId);
-    const contentData = data.Content.filter(
-      (item) => item.content_id === contentId
-    )[0];
     return {
-      contentId: contentId,
-      title: contentData.title,
-      context: contentData.context,
-      user: data.User.filter((item) => item.user_id === contentData.user_id)[0]
-        .name,
-      created: contentData.created_at,
+      contentData: [],
     };
   },
+
   methods: {
     deleteData() {
       const content_index = data.Content.findIndex(
@@ -105,9 +114,9 @@ export default {
 }
 .title {
   font-size: 30px;
-  margin-right: 50px;
+  margin-right: 150px;
 }
-.user{
+.user {
   font-size: 25px;
 }
 
