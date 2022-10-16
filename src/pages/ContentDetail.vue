@@ -41,6 +41,7 @@
 <script>
 import NavBar from "@/components/Main/NavBar.vue";
 import axios from "axios";
+import { mapState } from "vuex";
 
 export default {
   name: "ContentDetail",
@@ -61,6 +62,9 @@ export default {
         console.log(err);
       });
   },
+  computed: {
+    ...mapState(["token"]),
+  },
   data() {
     return {
       contentData: [],
@@ -69,13 +73,29 @@ export default {
 
   methods: {
     deleteData() {
-      const content_index = data.Content.findIndex(
-        (item) => item.content_id === this.contentId
-      );
-      data.Content.splice(content_index, 1);
-      this.$router.push({
-        path: "/board/free",
-      });
+      let url = "http://3.34.149.238:8080";
+      var vm = this;
+      let Num = Number(vm.$route.params.questionId);
+      let token = vm.$store.state.token;
+      let isDelete = confirm("게시글을 삭제하시겠습니까?");
+      let config = {
+        headers: {
+          Authorization: token,
+        },
+      };
+      if (isDelete == true) {
+        axios
+          .patch(url + "/api/question/status?questionId=" + Num, null, config)
+          .then((res) => {
+            alert("게시글이 삭제되었습니다.");
+            this.$router.push({
+              path: "/board/free",
+            });
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
     },
     updateData() {
       this.$router.push({
