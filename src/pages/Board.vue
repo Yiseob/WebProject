@@ -15,7 +15,7 @@
         :fields="fields"
         :per-page="perPage"
         :current-page="currentPage"
-        small
+        large
         @row-clicked="rowClick"
       ></b-table>
       <br />
@@ -59,7 +59,6 @@ export default {
     var vm = this;
     axios.get(url + "/api/question/any/list").then((res) => {
       vm.items = res.data;
-      console.log(vm.items)
     });
   },
   methods: {

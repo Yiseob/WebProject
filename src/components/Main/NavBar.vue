@@ -102,11 +102,7 @@
               </router-link>
             </li>
             <li v-if="isLogin">
-              <router-link
-                to="/main"
-                @click="logOut"
-                class="nav-link text-white"
-              >
+              <div @click="logOut" class="nav-link text-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -120,7 +116,7 @@
                   />
                 </svg>
                 LogOut
-              </router-link>
+              </div>
             </li>
             <li v-else>
               <router-link to="/login" class="nav-link text-white">
@@ -158,10 +154,14 @@ export default {
   },
   methods: {
     logOut() {
-      this.$store.dispatch("logOut");
-      this.$router.push({
-        path: "/main",
-      });
+      let confirmLogout = confirm("로그아웃 하시겠습니까?");
+      if (confirmLogout == true) {
+        this.$store.dispatch("logOut");
+        alert("로그아웃 처리 되었습니다");
+        this.$router.push({
+          path: "/main",
+        });
+      }
     },
 
     isBoard() {

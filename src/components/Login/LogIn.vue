@@ -95,14 +95,13 @@ export default {
           axios
             .get(url + "/api/member/info", config)
             .then((response) => {
-              console.log(response);
+              let memberName = response.data.memberName;
               vm.$store.dispatch("setToken", token);
-       
+              alert("환영합니다! " + memberName + "님");
             })
             .catch((error) => {
               console.log(error);
             });
-          console.log(res);
         })
         .catch((err) => {
           console.log(err);
