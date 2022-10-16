@@ -18,12 +18,12 @@
         <div class="content-detail-content-info-right">
           <div class="content-detail-content-info-right-user">
             <span> 작성자: </span>
-            <span class="user">{{ this.contentData.authorName }}</span>
+            <span class="user">{{ this.contentData.questionAuthorName }}</span>
           </div>
         </div>
       </div>
       <div class="content-detail-content form-control">
-        {{ this.contentData.content }}
+        {{ this.contentData.questionContent }}
       </div>
       <div class="content-detail-button">
         <b-button class="update" variant="primary" @click="updateData"
@@ -50,13 +50,12 @@ export default {
   mounted() {
     let url = "http://3.34.149.238:8080";
     var vm = this;
+    // let contentData = {};
     let Num = Number(vm.$route.params.questionId);
     axios
       .get(url + "/api/question/any/one?questionId=" + Num)
       .then((res) => {
         vm.contentData = res.data;
-        console.log(vm.contentData);
-        return vm.contentData;
       })
       .catch((err) => {
         console.log(err);
@@ -80,7 +79,7 @@ export default {
     },
     updateData() {
       this.$router.push({
-        path: `/board/free/create/${this.contentId}`,
+        path: `/board/free/create/${this.contentData.questionId}`,
       });
     },
   },

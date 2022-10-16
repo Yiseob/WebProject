@@ -10,10 +10,21 @@
     <div class="Board">
       <b-table
         hover
+        id="my-table"
         :items="items"
         :fields="fields"
+        :per-page="perPage"
+        :current-page="currentPage"
+        small
         @row-clicked="rowClick"
       ></b-table>
+      <br />
+      <b-pagination
+        v-model="currentPage"
+        :total-rows="rows"
+        :per-page="perPage"
+        aria-controls="my-table"
+      ></b-pagination>
       <br />
       <b-button @click="writeContent">글쓰기</b-button>
     </div>
@@ -30,18 +41,25 @@ export default {
     NavBar,
   },
 
-  data() {  
+  data() {
     return {
+      perPage: 3,
+      currentPage: 1,
       fields: ["questionId", "title", "authorName"],
       items: [],
     };
+  },
+  computed: {
+    rows() {
+      return this.items.length;
+    },
   },
   created() {
     let url = "http://3.34.149.238:8080";
     var vm = this;
     axios.get(url + "/api/question/any/list").then((res) => {
       vm.items = res.data;
-      console.log(res.data);
+      console.log(vm.items)
     });
   },
   methods: {

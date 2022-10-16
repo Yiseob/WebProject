@@ -18,7 +18,7 @@ const routes = [
     { path: '/Board/free', component: Board },
     { path: '/dots', component: Dots },
     { path: '/board/free/detail/:questionId', name: 'ContentDetail', component: ContentDetail },
-    { path: '/board/free/create/:contentId?', name: 'Create', component: Create },
+    { path: '/board/free/create/:questionId?', name: 'Create', component: Create },
     { path: '/signin', component: SignIn },
 ]
 

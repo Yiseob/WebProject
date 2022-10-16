@@ -42,7 +42,6 @@
 
 <script>
 import NavBar from "@/components/Main/NavBar.vue";
-import data from "@/data";//서버랑 연결한 후에는 삭제 하자 ㅅㅂ
 import axios from "axios";
 import { mapState } from "vuex";
 
@@ -61,17 +60,23 @@ export default {
       userId: 1,
       createdAt: "2022-09-25 11:32:42",
       updatedAt: null,
-      updateMode: this.$route.params.contentId > 0 ? true : false,
+      updateMode: Number(this.$route.params.questionId) > 0 ? true : false,
     };
   },
   created() {
-    if (this.$route.params.contentId > 0) {
-      const contentId = Number(this.$route.params.contentId);
-      this.updateObject = data.Content.filter(
-        (item) => item.content_id === contentId
-      )[0];
-      this.subject = this.updateObject.title;
-      this.context = this.updateObject.context;
+    if (Number(this.$route.params.questionId) > 0) {
+      let url = "http://3.34.149.238:8080";
+      var vm = this;
+      let Num = Number(vm.$route.params.questionId);
+      axios
+        .get(url + "/api/question/any/one?questionId=" + Num)
+        .then((res) => {
+          this.subject = res.data.title;
+          this.context = res.data.questionContent;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
   },
   methods: {
@@ -123,15 +128,15 @@ export default {
       // });
     },
     updateContent() {
+      var vm = this;
       let url = "http://3.34.149.238:8080";
-      const contentId = Number(this.$route.params.contentId);
+      const contentId = Number(vm.$route.params.questionId);
       let data = {
         accessLevel: "PUBLIC",
-        content: this.context,
+        content: vm.context,
         questionId: contentId,
-        title: this.subject,
+        title: vm.subject,
       };
-      var vm = this;
       let token = vm.$store.state.token;
       let config = {
         headers: {
