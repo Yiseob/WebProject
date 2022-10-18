@@ -33,7 +33,29 @@
           >삭제</b-button
         >
       </div>
-      <div class="content-detail-comment">덧글</div>
+      <div class="content-detail-comment">
+        답변 내용 :
+        <div class="replyContent">
+          <input
+            type="text"
+            class="replyContent form-control"
+            id="floatingInput"
+            placeholder="답변 내용"
+            v-model="replyContent"
+            autocomplete="off"
+          />
+        </div>
+        <b-button
+          class="submitReply"
+          @click="updateMode ? updateReply() : uploadReply()"
+        >
+          <div v-if="updateMode">답변 수정</div>
+          <div v-else>답변 등록</div></b-button
+        >
+
+        <br />
+        <span class="reply">{{ this.contentData.answerContent }}</span>
+      </div>
     </b-card>
   </div>
 </template>
@@ -51,12 +73,15 @@ export default {
   mounted() {
     let url = "http://3.34.149.238:8080";
     var vm = this;
-    // let contentData = {};
     let Num = Number(vm.$route.params.questionId);
     axios
       .get(url + "/api/question/any/one?questionId=" + Num)
       .then((res) => {
         vm.contentData = res.data;
+        console.log(vm.contentData);
+        vm.contentData.answerId == null
+          ? (vm.updateMode = false)
+          : (vm.updateMode = true);
       })
       .catch((err) => {
         console.log(err);
@@ -68,6 +93,8 @@ export default {
   data() {
     return {
       contentData: [],
+      relpyContent: "",
+      updateMode: "",
     };
   },
 
@@ -94,6 +121,7 @@ export default {
           })
           .catch((err) => {
             console.log(err);
+            alert("게시글 삭제에 실패하였습니다.");
           });
       }
     },
@@ -101,6 +129,63 @@ export default {
       this.$router.push({
         path: `/board/free/create/${this.contentData.questionId}`,
       });
+    },
+    uploadReply() {
+      let url = "http://3.34.149.238:8080";
+      var vm = this;
+      let token = vm.$store.state.token;
+      let Num = Number(vm.$route.params.questionId);
+      let data = {
+        content: this.replyContent,
+        questionId: Num,
+      };
+      let config = {
+        headers: {
+          Authorization: token,
+        },
+      };
+      let isReply = confirm("답변을 등록하시겠습니까?");
+      if (isReply == true) {
+        axios
+          .post(url + "/api/answer", data, config)
+          .then((res) => {
+            alert("답변이 등록되었습니다");
+            vm.$router.push({
+              path: "/board/free",
+            });
+          })
+          .catch((err) => {
+            console.log(err);
+            alert("답변 등록에 실패했습니다.");
+          });
+      }
+    },
+    updateReply() {
+      let url = "http://3.34.149.238:8080";
+      var vm = this;
+      let token = vm.$store.state.token;
+
+      let data = {
+        content: this.replyContent,
+        answerId: this.contentData.answerId,
+      };
+      let config = {
+        headers: {
+          Authorization: token,
+        },
+      };
+      axios
+        .patch(url + "/api/answer", data, config)
+        .then((res) => {
+          alert("답변이 수정되었습니다");
+          vm.$router.push({
+            path: "/board/free/",
+          });
+        })
+        .catch((err) => {
+          console.log(err);
+          alert("답변 수정에 실패했습니다.");
+        });
     },
   },
 };

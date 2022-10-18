@@ -85,13 +85,14 @@ export default {
           vm.$router.push({
             path: "/main",
           });
-
           let token = res.data.accessToken;
+          console.log(token);
           let config = {
             headers: {
               Authorization: "Bearer " + token,
             },
           };
+
           axios
             .get(url + "/api/member/info", config)
             .then((response) => {

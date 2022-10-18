@@ -5,6 +5,7 @@
     <div class="header">
       <span class="title">질문 게시판</span>
       <hr class="featurette-divider" />
+      <span v-if="isLoading">Loading...</span>
     </div>
 
     <div class="Board">
@@ -47,6 +48,7 @@ export default {
       currentPage: 1,
       fields: ["questionId", "title", "authorName"],
       items: [],
+      isLoading: false,
     };
   },
   computed: {
@@ -57,8 +59,12 @@ export default {
   created() {
     let url = "http://3.34.149.238:8080";
     var vm = this;
+    vm.isLoading = true;
     axios.get(url + "/api/question/any/list").then((res) => {
-      vm.items = res.data;
+      setTimeout(function() {
+        vm.isLoading = false;
+        vm.items = res.data;
+      }, 1000);
     });
   },
   methods: {
