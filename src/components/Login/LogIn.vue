@@ -84,6 +84,7 @@ export default {
           });
           let token = res.data.accessToken;
           let refresh = res.data.refreshToken;
+          let expireTime = res.data.accessTokenExpireTime;
           console.log(res);
           let config = {
             headers: {
@@ -97,9 +98,19 @@ export default {
               let role = response.data.role;
               console.log(response);
               vm.$store.dispatch("setToken", token);
+              vm.$store.dispatch("setExpireTime", expireTime);
               vm.$store.dispatch("setRole", role);
               vm.$store.dispatch("setRefresh", refresh);
               alert("환영합니다! " + memberName + "님");
+              console.log(vm.$store.state);
+
+              let atTime = new Date();
+              let expire = new Date(expireTime);
+              if (expire > atTime) {
+                console.log(true);
+              } else {
+                console.log(false);
+              }
             })
             .catch((error) => {
               console.log(error);

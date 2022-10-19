@@ -44,7 +44,7 @@ export default {
 
   data() {
     return {
-      perPage: 3,
+      perPage: 5,
       currentPage: 1,
       fields: ["questionId", "title", "authorName"],
       items: [],
@@ -60,12 +60,22 @@ export default {
     let url = "http://3.34.149.238:8080";
     var vm = this;
     vm.isLoading = true;
-    axios.get(url + "/api/question/any/list").then((res) => {
-      setTimeout(function() {
-        vm.isLoading = false;
-        vm.items = res.data;
-      }, 1000);
-    });
+    axios
+      .get(
+        url +
+          "/api/question/any/list?" +
+          "page=" +
+          vm.currentPage +
+          "&" +
+          "size=" +
+          vm.perPage
+      )
+      .then((res) => {
+        setTimeout(function () {
+          vm.isLoading = false;
+          vm.items = res.data;
+        }, 1000);
+      });
   },
   methods: {
     rowClick(item) {
