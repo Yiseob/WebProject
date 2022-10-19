@@ -7,6 +7,11 @@
 <script>
 export default {
   name: "App",
+  computed:{
+    isLogin(){
+      return this.$store.getters.isLogin()
+    }
+  }
 };
 </script>
 

@@ -66,10 +66,7 @@ export default {
       password: "",
     };
   },
-  mounted() {
-    const store = useStore();
-    console.log(store.state.token);
-  },
+  mounted() {},
 
   methods: {
     submitForm: function () {
@@ -86,18 +83,22 @@ export default {
             path: "/main",
           });
           let token = res.data.accessToken;
-          console.log(token);
+          let refresh = res.data.refreshToken;
+          console.log(res);
           let config = {
             headers: {
               Authorization: "Bearer " + token,
             },
           };
-
           axios
             .get(url + "/api/member/info", config)
             .then((response) => {
               let memberName = response.data.memberName;
+              let role = response.data.role;
+              console.log(response);
               vm.$store.dispatch("setToken", token);
+              vm.$store.dispatch("setRole", role);
+              vm.$store.dispatch("setRefresh", refresh);
               alert("환영합니다! " + memberName + "님");
             })
             .catch((error) => {

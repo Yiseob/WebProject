@@ -35,24 +35,27 @@
       </div>
       <div class="content-detail-comment">
         답변 내용 :
-        <div class="replyContent">
-          <input
-            type="text"
-            class="replyContent form-control"
-            id="floatingInput"
-            placeholder="답변 내용"
-            v-model="replyContent"
-            autocomplete="off"
-          />
-        </div>
-        <b-button
-          class="submitReply"
-          @click="updateMode ? updateReply() : uploadReply()"
-        >
-          <div v-if="updateMode">답변 수정</div>
-          <div v-else>답변 등록</div></b-button
-        >
+        <div v-if="isAdmin">
+          <div class="replyContent">
+            <input
+              type="text"
+              class="replyContent form-control"
+              id="floatingInput"
+              placeholder="답변 내용"
+              v-model="replyContent"
+              autocomplete="off"
+            />
+          </div>
 
+          <b-button
+            class="submitReply"
+            @click="updateMode ? updateReply() : uploadReply()"
+          >
+            <div v-if="updateMode">답변 수정</div>
+            <div v-else>답변 등록</div></b-button
+          >
+        </div>
+        <div v-else></div>
         <br />
         <span class="reply">{{ this.contentData.answerContent }}</span>
       </div>
@@ -74,11 +77,15 @@ export default {
     let url = "http://3.34.149.238:8080";
     var vm = this;
     let Num = Number(vm.$route.params.questionId);
+    if (vm.$store.state.role == "ADMIN") {
+      vm.isAdmin = true;
+    } else {
+      vm.isAdmin = false;
+    }
     axios
       .get(url + "/api/question/any/one?questionId=" + Num)
       .then((res) => {
         vm.contentData = res.data;
-        console.log(vm.contentData);
         vm.contentData.answerId == null
           ? (vm.updateMode = false)
           : (vm.updateMode = true);
@@ -89,12 +96,14 @@ export default {
   },
   computed: {
     ...mapState(["token"]),
+    ...mapState(["role"]),
   },
   data() {
     return {
       contentData: [],
       relpyContent: "",
       updateMode: "",
+      isAdmin: false,
     };
   },
 
