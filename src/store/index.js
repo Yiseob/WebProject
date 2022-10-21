@@ -12,15 +12,15 @@ export default createStore({
         refresh: null,
     },
     getters: {
-        isExpire() {
-            let atTime = new Date();
-            let expire = expireTime
-            if (expire <= atTime) {
-                return true
-            } else {
-                return false
-            }
-        }
+        // isExpire() {
+        //     let atTime = new Date();
+        //     let expire = expireTime
+        //     if (expire <= atTime) {
+        //         return true
+        //     } else {
+        //         return false
+        //     }
+        // }
     },
 
     mutations: {  // commit 으로 부를 수 있다.

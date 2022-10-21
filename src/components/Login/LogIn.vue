@@ -103,14 +103,6 @@ export default {
               vm.$store.dispatch("setRefresh", refresh);
               alert("환영합니다! " + memberName + "님");
               console.log(vm.$store.state);
-
-              let atTime = new Date();
-              let expire = new Date(expireTime);
-              if (expire > atTime) {
-                console.log(true);
-              } else {
-                console.log(false);
-              }
             })
             .catch((error) => {
               console.log(error);

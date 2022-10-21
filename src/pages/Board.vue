@@ -21,10 +21,13 @@
       ></b-table>
       <br />
       <b-pagination
+        class="pagination"
+        align="center"
         v-model="currentPage"
         :total-rows="rows"
         :per-page="perPage"
         aria-controls="my-table"
+        @page-click="pageClick"
       ></b-pagination>
       <br />
       <b-button @click="writeContent">글쓰기</b-button>
@@ -44,44 +47,48 @@ export default {
 
   data() {
     return {
-      perPage: 5,
+      perPage: 10,
       currentPage: 1,
+      allPage: "",
       fields: ["questionId", "title", "authorName"],
       items: [],
-      isLoading: false,
     };
   },
   computed: {
     rows() {
-      return this.items.length;
+      return this.perPage * this.allPage;
     },
   },
   created() {
-    let url = "http://3.34.149.238:8080";
-    var vm = this;
-    vm.isLoading = true;
-    axios
-      .get(
-        url +
-          "/api/question/any/list?" +
-          "page=" +
-          vm.currentPage +
-          "&" +
-          "size=" +
-          vm.perPage
-      )
-      .then((res) => {
-        setTimeout(function () {
-          vm.isLoading = false;
-          vm.items = res.data;
-        }, 1000);
-      });
+    this.getNoticeListByPage(this.currentPage);
   },
   methods: {
     rowClick(item) {
       this.$router.push({
         path: `/board/free/detail/${item.questionId}`,
       });
+    },
+    pageClick(button, page) {
+      (this.currentPage = page), this.getNoticeListByPage(page);
+    },
+    getNoticeListByPage(page) {
+      let url = "http://3.34.149.238:8080";
+      var vm = this;
+      let curPage = page - 1;
+      axios
+        .get(
+          url +
+            "/api/question/any/list?" +
+            "page=" +
+            curPage +
+            "&" +
+            "size=" +
+            10
+        )
+        .then((res) => {
+          vm.items = res.data.getQuestionListResponseDtoList;
+          vm.allPage = res.data.totalPageNumber;
+        });
     },
     writeContent() {
       this.$router.push({
@@ -114,4 +121,5 @@ export default {
   margin-right: 350px;
   font-family: "Jua", sans-serif;
 }
+
 </style>

@@ -52,6 +52,7 @@ export default {
   },
   computed: {
     ...mapState(["token"]),
+    ...mapState(["refresh"]),
   },
   data() {
     return {
@@ -111,21 +112,6 @@ export default {
           console.log(err);
           alert("문의글 게시에 실패했습니다.");
         });
-
-      // let items = data.Content.sort((a, b) => {
-      //   return b.content_id - a.content_id;
-      // });
-      // // 글 번호 역순으로 배열 처리
-      // const content_id = items[0].content_id + 1;
-      // // 지금 등록하는 글의 글 번호
-      // data.Content.push({
-      //   content_id: content_id,
-      //   user_id: this.userId,
-      //   title: this.subject,
-      //   context: this.context,
-      //   created_at: this.createdAt,
-      //   updated_at: null,
-      // });
     },
     updateContent() {
       var vm = this;
@@ -152,7 +138,24 @@ export default {
           });
         })
         .catch((err) => {
-          console.log(err);
+          // console.log(err);
+          // let refresh = vm.$store.state.refresh;
+          // let configs = {
+          //   headers: {
+          //     Authorization: "Bearer " + refresh,
+          //   },
+          // };
+          // axios
+          //   .post(url + "/api/access-token/issue", configs)
+          //   .then((response) => {
+          //     let token = response.data.accessToken;
+          //     vm.$store.dispatch("setToken", token);
+          //     console.log("토큰이 갱신되었습니다.");
+          //   })
+          //   .catch((error) => {
+          //     console.log("토큰 갱신에 실패하였습니다");
+          //   });
+
           alert("문의글 수정에 실패했습니다.");
         });
     },
