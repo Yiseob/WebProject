@@ -212,7 +212,7 @@
   </div>
 </template>
 <script>
-import axios from "axios";
+import axios from "../axios/index.js";
 
 export default {
   name: "SignIn",

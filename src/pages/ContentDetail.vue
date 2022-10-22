@@ -65,7 +65,7 @@
 
 <script>
 import NavBar from "@/components/Main/NavBar.vue";
-import axios from "axios";
+import axios from "../axios/index.js";
 import { mapState } from "vuex";
 
 export default {

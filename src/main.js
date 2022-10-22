@@ -6,6 +6,7 @@ import VueCookie from 'vue-cookie'
 import store from './store';
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue-3/dist/bootstrap-vue-3.css'
+import axios from 'axios'
 
 // import store from './vuex/store'
 
@@ -23,6 +24,7 @@ app.mount('#app')
 // app.use(axios)
 // app.use(VueCookie)
 app.use(store)
+app.use(axios)
 
 
 
