@@ -50,7 +50,12 @@ export default {
       perPage: 10,
       currentPage: 1,
       allPage: "",
-      fields: ["questionId", "title", "authorName"],
+      fields: [
+        { key: "questionId", label: "번호" },
+        { key: "title", label: "질문 제목" },
+        { key: "authorName", label: "작성자" },
+        { key: "answerStatus", label: "비고" },
+      ],
       items: [],
     };
   },
@@ -86,8 +91,16 @@ export default {
             10
         )
         .then((res) => {
-          vm.items = res.data.getQuestionListResponseDtoList;
           vm.allPage = res.data.totalPageNumber;
+          res.data.getQuestionListResponseDtoList.map((item) => {
+            if (item.answerStatus == "ANSWERED") {
+              item.answerStatus = "답변 완료";
+            } else {
+              item.answerStatus = "-";
+            }
+          });
+          console.log(res.data.getQuestionListResponseDtoList);
+          vm.items = res.data.getQuestionListResponseDtoList;
         });
     },
     writeContent() {
@@ -117,9 +130,8 @@ export default {
 .Board {
   text-align: center;
   margin-top: 50px;
-  margin-left: 350px;
-  margin-right: 350px;
+  margin-left: 250px;
+  margin-right: 250px;
   font-family: "Jua", sans-serif;
 }
-
 </style>
