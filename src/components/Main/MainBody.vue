@@ -3,7 +3,7 @@
     <b-card
       overlay
       class="Image"
-      img-src="./Main.jpg"
+      img-src="./Main2.jpg"
       img-alt="Card Image"
       text-variant="white"
       style="border: 0"

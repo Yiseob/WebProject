@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Calendar from "../components/Calendar.vue";
+import Calendar from "../components/Main/Calendar.vue";
 export default {
   name: "Attendance",
   components: {
@@ -14,6 +14,5 @@ export default {
   },
 };
 </script>
-
 <style>
 </style>

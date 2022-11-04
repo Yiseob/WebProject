@@ -28,6 +28,3 @@ app.use(store)
 app.use(axios)
 
 
-
-window.Kakao.init('424f2da784ec819e556030a2493f9039');
-// Vue.prototype.$axios = axios

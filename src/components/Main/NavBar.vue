@@ -172,7 +172,7 @@ export default {
 
     isQnA() {
       let router = this.$route;
-      if (router.path.includes("/board/free") == true) {
+      if (router.path.includes("/qna/free") == true) {
         return "nav-link text-secondary";
       } else {
         return "nav-link text-white";
