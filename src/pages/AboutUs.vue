@@ -26,20 +26,15 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <svg
-            class="bd-placeholder-img"
-            width="100%"
-            height="100%"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-            preserveAspectRatio="xMidYMid slice"
-            focusable="false"
-          >
-            <rect width="100%" height="100%" fill="#777" />
-          </svg>
+          <img
+            class="bd-placeholder-img slide"
+            id="slide1"
+            src="@/assets/슬라이드1.jpg"
+          />
+          <rect width="100%" height="100%" fill="#777" />
 
           <div class="container">
-            <div class="carousel-caption text-start">
+            <div class="carousel-caption" id="carousel-text1">
               <h1>Micro Garden</h1>
               <p>
                 Some representative placeholder content for the first slide of
@@ -52,20 +47,13 @@
           </div>
         </div>
         <div class="carousel-item">
-          <svg
-            class="bd-placeholder-img"
-            width="100%"
-            height="100%"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-            preserveAspectRatio="xMidYMid slice"
-            focusable="false"
-          >
-            <rect width="100%" height="100%" fill="#777" />
-          </svg>
-
+          <img
+            class="bd-placeholder-img slide"
+            id="slide2"
+            src="@/assets/슬라이드2.jpg"
+          />
           <div class="container">
-            <div class="carousel-caption">
+            <div class="carousel-caption" id="carousel-text2">
               <h1>Another example headline.</h1>
               <p>
                 Some representative placeholder content for the second slide of
@@ -76,20 +64,14 @@
           </div>
         </div>
         <div class="carousel-item">
-          <svg
-            class="bd-placeholder-img"
-            width="100%"
-            height="100%"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-            preserveAspectRatio="xMidYMid slice"
-            focusable="false"
-          >
-            <rect width="100%" height="100%" fill="#777" />
-          </svg>
+          <img
+            class="bd-placeholder-img slide"
+            id="slide3"
+            src="@/assets/슬라이드3.png"
+          />
 
           <div class="container">
-            <div class="carousel-caption text-end">
+            <div class="carousel-caption" id="carousel-text3">
               <h1>One more for good measure.</h1>
               <p>
                 Some representative placeholder content for the third slide of
@@ -125,80 +107,70 @@
     <!-- Marketing messaging and featurettes
   ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
+    <hr class="featurette-divider" />
 
     <div class="container marketing">
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
-          <svg
+          <img
             class="bd-placeholder-img rounded-circle"
-            width="140"
-            height="140"
-            xmlns="http://www.w3.org/2000/svg"
+            width="350"
+            height="350"
             role="img"
-            aria-label="Placeholder: 140x140"
+            src="@/assets/두호.png"
             preserveAspectRatio="xMidYMid slice"
             focusable="false"
-          >
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#777" />
-            <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-          </svg>
+          />
 
-          <h2 class="fw-normal">Heading</h2>
+          <h2 class="fw-normal">맹두호</h2>
+          <h2 class="fw-normal">CEO/CTO</h2>
           <p>
             Some representative placeholder content for the three columns of
             text below the carousel. This is the first column.
           </p>
-          <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+          <!-- <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p> -->
         </div>
+
         <!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <svg
+          <img
             class="bd-placeholder-img rounded-circle"
-            width="140"
-            height="140"
-            xmlns="http://www.w3.org/2000/svg"
+            width="350"
+            height="350"
             role="img"
-            aria-label="Placeholder: 140x140"
+            src="@/assets/동욱.png"
             preserveAspectRatio="xMidYMid slice"
             focusable="false"
-          >
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#777" />
-            <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-          </svg>
+          />
 
-          <h2 class="fw-normal">Heading</h2>
+          <h2 class="fw-normal">김동욱</h2>
+          <h2 class="fw-normal">COO</h2>
           <p>
             Another exciting bit of representative placeholder content. This
             time, we've moved on to the second column.
           </p>
-          <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+          <!-- <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p> -->
         </div>
         <!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <svg
+          <img
             class="bd-placeholder-img rounded-circle"
-            width="140"
-            height="140"
-            xmlns="http://www.w3.org/2000/svg"
+            width="350"
+            height="350"
             role="img"
-            aria-label="Placeholder: 140x140"
+            src="@/assets/장희.png"
             preserveAspectRatio="xMidYMid slice"
             focusable="false"
-          >
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#777" />
-            <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-          </svg>
+          />
 
-          <h2 class="fw-normal">Heading</h2>
+          <h2 class="fw-normal">장희</h2>
+          <h2 class="fw-normal">CMO</h2>
           <p>
             And lastly this, the third column of representative placeholder
             content.
           </p>
-          <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+          <!-- <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p> -->
         </div>
         <!-- /.col-lg-4 -->
       </div>
@@ -210,35 +182,23 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading fw-normal lh-1">
-            First featurette heading.
-            <span class="text-muted">It’ll blow your mind.</span>
-          </h2>
-          <p class="lead">
-            Some great placeholder content for the first featurette here.
-            Imagine some exciting prose here.
-          </p>
+          <h2 class="featurette-heading fw-normal lh-1">고촌 DOT</h2>
+          <br />
+          <h5 class="text-muted">경기도 고촌시 어쩌구 저쩌구</h5>
+          <p class="lead">김포 설명</p>
         </div>
         <div class="col-md-5">
-          <svg
+          <img
             class="
               bd-placeholder-img bd-placeholder-img-lg
               featurette-image
-              img-fluid
               mx-auto
             "
             width="500"
             height="500"
-            xmlns="http://www.w3.org/2000/svg"
-            role="img"
-            aria-label="Placeholder: 500x500"
-            preserveAspectRatio="xMidYMid slice"
-            focusable="false"
-          >
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#eee" />
-            <text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
-          </svg>
+            src="@/assets/김포소개.png"
+          />
+          <title>Placeholder</title>
         </div>
       </div>
 
@@ -246,36 +206,23 @@
 
       <div class="row featurette">
         <div class="col-md-7 order-md-2">
-          <h2 class="featurette-heading fw-normal lh-1">
-            Oh yeah, it’s that good.
-            <span class="text-muted">See for yourself.</span>
-          </h2>
-          <p class="lead">
-            Another featurette? Of course. More placeholder content here to give
-            you an idea of how this layout would work with some actual
-            real-world content in place.
-          </p>
+          <h2 class="featurette-heading fw-normal lh-1">일산 DOT</h2>
+          <br />
+          <h5 class="text-muted">경기도 일산시 서구 어쩌구 저쩌구</h5>
+          <p class="lead">일산 설명</p>
         </div>
         <div class="col-md-5 order-md-1">
-          <svg
+          <img
             class="
               bd-placeholder-img bd-placeholder-img-lg
               featurette-image
-              img-fluid
               mx-auto
             "
             width="500"
             height="500"
-            xmlns="http://www.w3.org/2000/svg"
-            role="img"
-            aria-label="Placeholder: 500x500"
-            preserveAspectRatio="xMidYMid slice"
-            focusable="false"
-          >
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#eee" />
-            <text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
-          </svg>
+            src="@/assets/일산소개.png"
+          />
+          <title>Placeholder</title>
         </div>
       </div>
 
@@ -283,36 +230,23 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading fw-normal lh-1">
-            And lastly, this one. <span class="text-muted">Checkmate.</span>
-          </h2>
-          <p class="lead">
-            And yes, this is the last block of representative placeholder
-            content. Again, not really intended to be actually read, simply here
-            to give you a better view of what this would look like with some
-            actual content. Your content.
-          </p>
+          <h2 class="featurette-heading fw-normal lh-1">원마운트 DOT</h2>
+          <br />
+          <h5 class="text-muted">일산시 서구 원마운트 주소</h5>
+          <p class="lead">원마운트 설명</p>
         </div>
         <div class="col-md-5">
-          <svg
+          <img
             class="
               bd-placeholder-img bd-placeholder-img-lg
               featurette-image
-              img-fluid
               mx-auto
             "
             width="500"
             height="500"
-            xmlns="http://www.w3.org/2000/svg"
-            role="img"
-            aria-label="Placeholder: 500x500"
-            preserveAspectRatio="xMidYMid slice"
-            focusable="false"
-          >
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#eee" />
-            <text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
-          </svg>
+            src="@/assets/원마운트.jpg"
+          />
+          <title>Placeholder</title>
         </div>
       </div>
 
@@ -337,7 +271,6 @@ export default {
 
 <style>
 body {
-
   padding-bottom: 3rem;
   color: #5a5a5a;
 }
@@ -354,12 +287,34 @@ body {
   bottom: 3rem;
   z-index: 10;
 }
-
+#carousel-text1 {
+  text-align: left;
+}
+#carousel-text2 {
+  text-align: center;
+  margin-bottom: 520px;
+}
+#carousel-text3 {
+  text-align: right;
+  margin-bottom: 470px;
+}
 /* Declare heights because of positioning of img element */
 .carousel-item {
-  height: 32rem;
+  height: 800px;
+  width: auto;
+  overflow: hidden;
 }
-
+#slide1 {
+  width: 100%;
+  height: 100%;
+}
+#slide2 {
+  max-width: 100%;
+}
+#slide3 {
+  max-width: 100%;
+  height: 100%;
+}
 /* MARKETING CONTENT
 -------------------------------------------------- */
 
@@ -413,15 +368,20 @@ body {
 }
 
 .bd-placeholder-img {
+  object-fit: cover;
+
+  margin-bottom: 30px;
   font-size: 1.125rem;
-  text-anchor: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
 }
 
+.bd-placeholder-img rounded-circle {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
 @media (min-width: 768px) {
   .bd-placeholder-img-lg {
+    border-radius: 5%;
+
     font-size: 3.5rem;
   }
 }
