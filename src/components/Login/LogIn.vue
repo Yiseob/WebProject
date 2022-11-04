@@ -53,7 +53,6 @@
 <script>
 // import LoginKakao from "./Kakao.vue";
 import axios from "../../axios/index.js";
-import { useStore } from "vuex";
 
 export default {
   name: "LogIn",

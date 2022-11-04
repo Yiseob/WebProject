@@ -45,6 +45,7 @@ import NavBar from "@/components/Main/NavBar.vue";
 import axios from "../axios/index.js";
 import { mapState } from "vuex";
 
+
 export default {
   name: "Create",
   components: {
@@ -83,7 +84,7 @@ export default {
   methods: {
     cancel() {
       this.$router.push({
-        path: "/board/free/",
+        path: "/qna/free/",
       });
     },
     uploadContent() {
@@ -105,7 +106,7 @@ export default {
         .then((res) => {
           alert("문의글이 등록되었습니다");
           vm.$router.push({
-            path: "/board/free/",
+            path: "/qna/free/",
           });
         })
         .catch((err) => {
@@ -134,7 +135,7 @@ export default {
         .then((res) => {
           alert("문의글이 수정되었습니다");
           vm.$router.push({
-            path: "/board/free/",
+            path: "/qna/free/",
           });
         })
         .catch((err) => {

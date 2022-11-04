@@ -40,7 +40,7 @@ import NavBar from "@/components/Main/NavBar.vue";
 import axios from "../axios/index.js";
 
 export default {
-  name: "Board",
+  name: "QnA",
   components: {
     NavBar,
   },
@@ -70,7 +70,7 @@ export default {
   methods: {
     rowClick(item) {
       this.$router.push({
-        path: `/board/free/detail/${item.questionId}`,
+        path: `/qna/free/detail/${item.questionId}`,
       });
     },
     pageClick(button, page) {
@@ -105,7 +105,7 @@ export default {
     },
     writeContent() {
       this.$router.push({
-        path: "/board/free/create",
+        path: "/qna/free/create",
       });
     },
   },

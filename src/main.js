@@ -7,6 +7,7 @@ import store from './store';
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue-3/dist/bootstrap-vue-3.css'
 import axios from 'axios'
+import Vuex from 'vuex'
 
 // import store from './vuex/store'
 

@@ -25,6 +25,9 @@
       <div class="content-detail-content form-control">
         {{ this.contentData.questionContent }}
       </div>
+        <div class="content-detail-content-create form-control">
+        {{ this.contentData.questionCreateTime }}
+      </div>
       <div class="content-detail-button">
         <b-button class="update" variant="primary" @click="updateData"
           >수정</b-button
@@ -86,6 +89,7 @@ export default {
       .get(url + "/api/question/any/one?questionId=" + Num)
       .then((res) => {
         vm.contentData = res.data;
+        console.log(vm.contentData);
         vm.contentData.answerId == null
           ? (vm.updateMode = false)
           : (vm.updateMode = true);
@@ -125,7 +129,7 @@ export default {
           .then((res) => {
             alert("게시글이 삭제되었습니다.");
             this.$router.push({
-              path: "/board/free",
+              path: "/qna/free",
             });
           })
           .catch((err) => {
@@ -136,7 +140,7 @@ export default {
     },
     updateData() {
       this.$router.push({
-        path: `/board/free/create/${this.contentData.questionId}`,
+        path: `/qna/free/create/${this.contentData.questionId}`,
       });
     },
     uploadReply() {
@@ -160,7 +164,7 @@ export default {
           .then((res) => {
             alert("답변이 등록되었습니다");
             vm.$router.push({
-              path: "/board/free",
+              path: "/qna/free",
             });
           })
           .catch((err) => {
@@ -188,7 +192,7 @@ export default {
         .then((res) => {
           alert("답변이 수정되었습니다");
           vm.$router.push({
-            path: "/board/free/",
+            path: "/qna/free/",
           });
         })
         .catch((err) => {
@@ -248,7 +252,12 @@ export default {
   padding-top: 1rem;
   height: 400px;
 }
-
+.content-detail-content-create {
+  border: 1px solid black;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  height: 100px;
+}
 .content-detail-button {
   border: 1px solid black;
   margin-top: 1rem;
