@@ -310,7 +310,8 @@ body {
   height: 100% !important;
 }
 #slide2 {
-  max-width: 100% !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 #slide3 {
   width: 100% !important;
