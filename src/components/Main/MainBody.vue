@@ -8,7 +8,7 @@
       text-variant="white"
       style="border: 0"
     >
-      <b-card-text class="String"> Micro Garden </b-card-text>
+      <b-card-text class="String"> 적용이 된건가?</b-card-text>
     </b-card>
   </div>
 </template>
