@@ -300,7 +300,7 @@ body {
 /* Declare heights because of positioning of img element */
 .carousel-item {
   height: 1200px;
-  width: auto;
+  /* width: auto; */
   overflow: hidden;
 }
 #slide1 {
