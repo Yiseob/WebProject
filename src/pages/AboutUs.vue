@@ -289,18 +289,19 @@ body {
 }
 #carousel-text1 {
   text-align: left;
+  margin-bottom: 200px;
 }
 #carousel-text2 {
   text-align: center;
-  margin-bottom: 520px;
+  margin-bottom: 820px;
 }
 #carousel-text3 {
   text-align: right;
-  margin-bottom: 470px;
+  margin-bottom: 770px;
 }
 /* Declare heights because of positioning of img element */
 .carousel-item {
-  height: 800px;
+  height: 1200px;
   width: auto;
   overflow: hidden;
 }
@@ -312,7 +313,7 @@ body {
   max-width: 100%;
 }
 #slide3 {
-  max-width: 100%;
+  width: 100%;
   height: 100%;
 }
 /* MARKETING CONTENT
