@@ -307,11 +307,10 @@ body {
 }
 #slide1 {
   width: 100% !important;
-  height: 100% !important;
 }
 #slide2 {
   width: 100% !important;
-  height: 100% !important;
+
 }
 #slide3 {
   width: 100% !important;
@@ -370,9 +369,7 @@ body {
 }
 
 .bd-placeholder-img {
-  object-fit: cover;
 
-  margin-bottom: 30px;
   font-size: 1.125rem;
 }
 
