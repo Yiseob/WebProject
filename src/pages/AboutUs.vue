@@ -254,8 +254,6 @@
 
       <!-- /END THE FEATURETTES -->
     </div>
-    <!-- /.container -->
-    <link href="@/assets/dist/css/bootstrap.min.css" rel="stylesheet" />
   </div>
 </template>
 
@@ -269,7 +267,7 @@ export default {
 };
 </script>
 
-<style>
+<style >
 body {
   padding-bottom: 3rem;
   color: #5a5a5a;
