@@ -306,15 +306,15 @@ body {
   overflow: hidden;
 }
 #slide1 {
-  width: 100%;
-  height: 100%;
+  width: 100% !important;
+  height: 100% !important;
 }
 #slide2 {
-  max-width: 100%;
+  max-width: 100% !important;
 }
 #slide3 {
-  width: 100%;
-  height: 100%;
+  width: 100% !important;
+  height: 100% !important;
 }
 /* MARKETING CONTENT
 -------------------------------------------------- */
@@ -376,7 +376,7 @@ body {
 }
 
 .bd-placeholder-img rounded-circle {
-  margin-top: 30px;
+  margin-top: 60px;
   margin-bottom: 30px;
 }
 @media (min-width: 768px) {
