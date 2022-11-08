@@ -2,7 +2,7 @@
   <div class="Back">
     <div class="Cards">
       <b-card-group deck>
-        <router-link to="/">
+        <router-link to="/aboutUs">
           <b-card
             title="About Us"
             img-src="./Lush1.png"
