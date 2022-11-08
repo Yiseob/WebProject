@@ -1,7 +1,6 @@
 <template>
   <div>
     <NavBar />
-
     <div class="header">
       <span class="title">질문 게시판</span>
       <hr class="featurette-divider" />

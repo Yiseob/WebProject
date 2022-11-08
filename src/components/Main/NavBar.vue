@@ -207,9 +207,9 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Shadows+Into+Light&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Jua&family=Patrick+Hand&family=Poor+Story&family=Shadows+Into+Light&family=Signika+Negative:wght@300&display=swap");
 .d-flex {
-  font-family: "Shadows Into Light", cursive;
+  font-family: "Comfortaa", cursive;
   font-size: 25px;
   font-weight: 200;
 }
