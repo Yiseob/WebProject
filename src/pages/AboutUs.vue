@@ -212,7 +212,8 @@
         <div class="col-md-7">
           <h2 class="featurette-heading fw-normal lh-1">고촌 DOT</h2>
           <br />
-          <h5 class="text-muted">경기도 고촌시 어쩌구 저쩌구</h5>
+          <h5 class="text-muted">경기도 김포시 고촌읍 태리 48-3</h5>
+          <br />
           <p class="lead">김포 설명</p>
         </div>
         <div class="col-md-5">
@@ -236,7 +237,8 @@
         <div class="col-md-7 order-md-2">
           <h2 class="featurette-heading fw-normal lh-1">일산 DOT</h2>
           <br />
-          <h5 class="text-muted">경기도 일산시 서구 어쩌구 저쩌구</h5>
+          <h5 class="text-muted">경기도 일산서구 대화로 61 커피파머</h5>
+          <br />
           <p class="lead">일산 설명</p>
         </div>
         <div class="col-md-5 order-md-1">
@@ -260,7 +262,8 @@
         <div class="col-md-7">
           <h2 class="featurette-heading fw-normal lh-1">원마운트 DOT</h2>
           <br />
-          <h5 class="text-muted">일산시 서구 원마운트 주소</h5>
+          <h5 class="text-muted">경기도 일산서구 한류월드로 300 원마운트</h5>
+          <br />
           <p class="lead">원마운트 설명</p>
         </div>
         <div class="col-md-5">
