@@ -35,7 +35,7 @@
 
           <div class="container">
             <div class="carousel-caption" id="carousel-text1">
-              <h1>공간만 있으면,<br>키웁니다.</h1>
+              <h1>공간만 있으면,<br />키웁니다.</h1>
               <p>
                 유휴 (遊休) + 공간 (空間)<br />
                 : 실내 실외를 구분하지 않고 쓰지 않는
@@ -54,7 +54,7 @@
           />
           <div class="container">
             <div class="carousel-caption" id="carousel-text2">
-              <h1>거리는 짧게, <br>제품은 신선하게</h1>
+              <h1>거리는 짧게, <br />제품은 신선하게</h1>
               <p>유통거리의 단축은 작물의 신선도를 더욱 높여줍니다.</p>
               <p>
                 <a class="btn btn-lg btn-primary" href="#">작물 구경하기</a>
@@ -72,7 +72,9 @@
           <div class="container">
             <div class="carousel-caption" id="carousel-text3">
               <h1>어디서나, 적은 비용으로</h1>
-              <p>언제 어디서나 적은 비용으로 신선한 식물을 키워낼 수 있습니다.</p>
+              <p>
+                언제 어디서나 적은 비용으로 신선한 식물을 키워낼 수 있습니다.
+              </p>
               <p>
                 <a class="btn btn-lg btn-primary" href="#">비용 문의하기</a>
               </p>
@@ -105,7 +107,7 @@
     <!-- Wrap the rest of the page in another container to center all the content. -->
     <hr class="featurette-divider" />
 
-    <div class="container marketing">
+    <div class="manager container marketing">
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
@@ -196,7 +198,7 @@
           <br />
 
           <li>
-            <strong> 가톨릭 대학교 국제통상 학사 /중문학 학사</strong>
+            <strong> 가톨릭 대학교 <br />국제통상 학사 /중문학 학사</strong>
           </li>
           <li>
             <strong> AJ Networks </strong><br />
@@ -214,13 +216,17 @@
 
       <hr class="featurette-divider" />
 
-      <div class="row featurette">
+      <div class="dot row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading fw-normal lh-1">고촌 DOT</h2>
+          <h2 class="featurette-heading fw-normal lh-1">김포 고촌 dot</h2>
           <br />
           <h5 class="text-muted">경기도 김포시 고촌읍 태리 48-3</h5>
           <br />
-          <p class="lead">김포 설명</p>
+          <p class="lead">
+            비닐하우스의 공간을 활용하여, 신선한 허브를 생산하여<br />
+            방문하시는 고객에게 판매하거나 카페와 레스토랑과 함께 공급하고
+            있습니다
+          </p>
         </div>
         <div class="col-md-5">
           <img
@@ -239,13 +245,17 @@
 
       <hr class="featurette-divider" />
 
-      <div class="row featurette">
+      <div class="dot row featurette">
         <div class="ilsan col-md-7 order-md-2">
-          <h2 class="featurette-heading fw-normal lh-1">일산 DOT</h2>
+          <h2 class="featurette-heading fw-normal lh-1">커피 파머 dot</h2>
           <br />
           <h5 class="text-muted">경기도 일산서구 대화로 61 커피파머</h5>
           <br />
-          <p class="lead">일산 설명</p>
+          <p class="lead">
+            카페내 구조를 그대로 살려 마이크로가든의 자동화 모듈을 이식하여<br />
+            커피나무, 올리브나무 등 다양한 반려식물을 키워 <br />카페내
+            인테리어와 묘목 판매를 하고 있습니다
+          </p>
         </div>
         <div class="col-md-5 order-md-1">
           <img
@@ -264,13 +274,19 @@
 
       <hr class="featurette-divider" />
 
-      <div class="row featurette">
+      <div class="dot row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading fw-normal lh-1">원마운트 DOT</h2>
+          <h2 class="featurette-heading fw-normal lh-1">일산 원마운트 dot</h2>
           <br />
           <h5 class="text-muted">경기도 일산서구 한류월드로 300 원마운트</h5>
           <br />
-          <p class="lead">원마운트 설명</p>
+          <p class="lead">
+            원마운트 5층 창고 공간내 폐열을 활용하여 <br />식물이 자랄 수 있는
+            환경을 조성하여 신선한 채소,허브를 생산하고 <br />도심내에서 어린
+            아이들에게 농업 현장 체험학습과 <br />
+            ICT를 활용한 마이크로가든 디바이스를 활용해 <br />6차 산업의 농업을
+            경험 할 수 있습니다
+          </p>
         </div>
         <div class="col-md-5">
           <img
@@ -305,6 +321,7 @@ export default {
 </script>
 
 <style >
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Yantramanav&display=swap");
 body {
   padding-bottom: 3rem;
   color: #5a5a5a;
@@ -316,6 +333,7 @@ body {
 /* Carousel base class */
 .carousel {
   margin-bottom: 4rem;
+  font-family: "Noto Sans KR", sans-serif;
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
@@ -325,13 +343,13 @@ body {
 #carousel-text1 {
   text-align: right;
   margin-bottom: 430px;
- margin-right: 30px;
- font-weight: bolder;
+  margin-right: 30px;
+  font-weight: bolder;
 }
 #carousel-text2 {
   text-align: right;
   font-weight: bolder;
-  margin-bottom: 430px;
+  margin-bottom: 530px;
 }
 #carousel-text3 {
   text-align: right;
@@ -373,6 +391,12 @@ body {
 
 .featurette-divider {
   margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+}
+.manager {
+  font-family: "Noto Sans KR", sans-serif !important;
+}
+.dot {
+  font-family: "Noto Sans KR", sans-serif !important;
 }
 
 /* Thin out the marketing headings */
