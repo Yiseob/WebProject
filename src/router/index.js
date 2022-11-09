@@ -14,7 +14,7 @@ import SignIn from '../pages/SignIn.vue'
 const routes = [
     { path: '/main', component: MainComponent },
     { path: '/login', component: LoginComponent },
-    { path: '/', component: Cover },
+    { path: '/',  component: Cover },
     { path: '/attendance', component: Attendance },
     { path: '/qna/free', component: QnA },
     { path: '/dots', component: Dots },
@@ -22,6 +22,8 @@ const routes = [
     { path: '/qna/free/detail/:questionId', name: 'ContentDetail', component: ContentDetail },
     { path: '/qna/free/create/:questionId?', name: 'Create', component: Create },
     { path: '/signin', component: SignIn },
+    { path: '/', redirect:'/main', },
+    { path: '/*', redirect:'/main',  },
 
 ]
 

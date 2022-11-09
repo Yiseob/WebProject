@@ -29,18 +29,19 @@
           <img
             class="bd-placeholder-img slide"
             id="slide1"
-            src="@/assets/슬라이드1.jpg"
+            src="@/assets/슬라이드1.png"
           />
           <rect width="100%" height="100%" fill="#777" />
 
           <div class="container">
             <div class="carousel-caption" id="carousel-text1">
-              <h1>유휴공간 활용</h1>
+              <h1>공간만 있으면,<br>키웁니다.</h1>
               <p>
-               유휴 (遊休) + 공간 (空間) : 실내 실외를 구분하지 않고 쓰지 않는 공간
+                유휴 (遊休) + 공간 (空間)<br />
+                : 실내 실외를 구분하지 않고 쓰지 않는
               </p>
               <p>
-                <a class="btn btn-lg btn-primary" href="#">Sign up today</a>
+                <a class="btn btn-lg btn-primary" href="#">공간 의뢰하기</a>
               </p>
             </div>
           </div>
@@ -49,16 +50,15 @@
           <img
             class="bd-placeholder-img slide"
             id="slide2"
-            src="@/assets/슬라이드2.jpg"
+            src="@/assets/슬라이드2.png"
           />
           <div class="container">
             <div class="carousel-caption" id="carousel-text2">
-              <h1>Another example headline.</h1>
+              <h1>거리는 짧게, <br>제품은 신선하게</h1>
+              <p>유통거리의 단축은 작물의 신선도를 더욱 높여줍니다.</p>
               <p>
-                Some representative placeholder content for the second slide of
-                the carousel.
+                <a class="btn btn-lg btn-primary" href="#">작물 구경하기</a>
               </p>
-              <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
             </div>
           </div>
         </div>
@@ -71,13 +71,10 @@
 
           <div class="container">
             <div class="carousel-caption" id="carousel-text3">
-              <h1>One more for good measure.</h1>
+              <h1>어디서나, 적은 비용으로</h1>
+              <p>언제 어디서나 적은 비용으로 신선한 식물을 키워낼 수 있습니다.</p>
               <p>
-                Some representative placeholder content for the third slide of
-                this carousel.
-              </p>
-              <p>
-                <a class="btn btn-lg btn-primary" href="#">Browse gallery</a>
+                <a class="btn btn-lg btn-primary" href="#">비용 문의하기</a>
               </p>
             </div>
           </div>
@@ -326,21 +323,24 @@ body {
   z-index: 10;
 }
 #carousel-text1 {
-  text-align: left;
-  margin-bottom: 200px;
+  text-align: right;
+  margin-bottom: 430px;
+ margin-right: 30px;
+ font-weight: bolder;
 }
 #carousel-text2 {
-  text-align: center;
-  margin-bottom: 820px;
+  text-align: right;
+  font-weight: bolder;
+  margin-bottom: 430px;
 }
 #carousel-text3 {
   text-align: right;
-  margin-bottom: 770px;
+  font-weight: bolder;
+  margin-bottom: 470px;
 }
 /* Declare heights because of positioning of img element */
 .carousel-item {
-  height: 1200px;
-  /* width: auto; */
+  height: 900px;
   overflow: hidden;
 }
 #slide1 {
@@ -382,7 +382,6 @@ body {
 }
 .ilsan {
   text-align: right;
-
 }
 
 /* rtl:end:remove */
