@@ -36,12 +36,14 @@
           <div class="container">
             <div class="carousel-caption" id="carousel-text1">
               <h1>공간만 있으면,<br />키웁니다.</h1>
+              <br />
               <p>
                 유휴 (遊休) + 공간 (空間)<br />
-                : 실내 실외를 구분하지 않고 쓰지 않는
+                : 실내 실외를 구분하지 않고<br />
+                쓰지 않고 놀리는 공간
               </p>
               <p>
-                <a class="btn btn-lg btn-primary" href="#">공간 의뢰하기</a>
+                <a class="btn btn-lg btn-primary" href="#">더 보기</a>
               </p>
             </div>
           </div>
@@ -115,6 +117,7 @@
             class="bd-placeholder-img rounded-circle"
             width="350"
             height="350"
+            id="circle"
             role="img"
             src="@/assets/두호.png"
             preserveAspectRatio="xMidYMid slice"
@@ -122,7 +125,7 @@
           />
 
           <h2 class="fw-normal">맹두호</h2>
-          <h2 class="fw-normal">CEO/CTO</h2>
+          <h4 class="fw-normal">CEO/CTO</h4>
           <br />
           <li>
             <strong> 건국대학교(서울) 전자공학과 </strong>
@@ -151,6 +154,7 @@
             class="bd-placeholder-img rounded-circle"
             width="350"
             height="350"
+            id="circle"
             role="img"
             src="@/assets/동욱.png"
             preserveAspectRatio="xMidYMid slice"
@@ -158,7 +162,7 @@
           />
 
           <h2 class="fw-normal">김동욱</h2>
-          <h2 class="fw-normal">COO</h2>
+          <h4 class="fw-normal">COO</h4>
           <br />
 
           <li>
@@ -187,6 +191,7 @@
             class="bd-placeholder-img rounded-circle"
             width="350"
             height="350"
+            id="circle"
             role="img"
             src="@/assets/장희.png"
             preserveAspectRatio="xMidYMid slice"
@@ -194,7 +199,7 @@
           />
 
           <h2 class="fw-normal">장희</h2>
-          <h2 class="fw-normal">CMO</h2>
+          <h4 class="fw-normal">CMO</h4>
           <br />
 
           <li>
@@ -342,7 +347,7 @@ body {
 }
 #carousel-text1 {
   text-align: right;
-  margin-bottom: 430px;
+  margin-bottom: 390px;
   margin-right: 30px;
   font-weight: bolder;
 }
@@ -438,6 +443,9 @@ body {
 
 .bd-placeholder-img rounded-circle {
   margin-top: 60px;
+  margin-bottom: 60px;
+}
+#circle {
   margin-bottom: 30px;
 }
 @media (min-width: 768px) {
