@@ -43,7 +43,7 @@
                 쓰지 않고 놀리는 공간
               </p>
               <p>
-                <a class="btn btn-lg btn-primary" href="#">더 보기</a>
+                <!-- <a class="btn btn-lg btn-primary" href="#">더 보기</a> -->
               </p>
             </div>
           </div>
@@ -60,7 +60,7 @@
               <br />
               <p>유통거리의 단축은 작물의 신선도를 더욱 높여줍니다.</p>
               <p>
-                <a class="btn btn-lg btn-primary" href="#">작물 구경하기</a>
+                <!-- <a class="btn btn-lg btn-primary" href="#">작물 구경하기</a> -->
               </p>
             </div>
           </div>
@@ -81,7 +81,7 @@
                 있습니다.
               </p>
               <p>
-                <a class="btn btn-lg btn-primary" href="#">비용 문의하기</a>
+                <!-- <a class="btn btn-lg btn-primary" href="#">비용 문의하기</a> -->
               </p>
             </div>
           </div>
