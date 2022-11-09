@@ -22,8 +22,7 @@ const routes = [
     { path: '/qna/free/detail/:questionId', name: 'ContentDetail', component: ContentDetail },
     { path: '/qna/free/create/:questionId?', name: 'Create', component: Create },
     { path: '/signin', component: SignIn },
-    { path: '/', redirect:'/main', },
-    { path: '/*', redirect:'/main',  },
+    { path: '/:catchAll(.*)', redirect:'/main', },
 
 ]
 
