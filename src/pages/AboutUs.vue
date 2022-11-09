@@ -130,24 +130,26 @@
           <h2 class="fw-normal">맹두호</h2>
           <h4 class="fw-normal">CEO/CTO</h4>
           <br />
-          <li>
-            <strong> 건국대학교(서울) 전자공학과 </strong>
-          </li>
-          <li>
-            <h9>
-              <strong> LG 유플러스 </strong> <br />
-              - LTE 서비스,5G NSA 시스템 운영 및 구축<br />(Nokia, Ericsson 5G
-              Project 외 다수)<br />
-              - 데이터 센터 전원 설계 및 구축 관리<br />(서버 데이터 센터 전원
-              및 백업전원 설계/관리)<br
-            /></h9>
-          </li>
-          <li>
-            <strong> 핀치그린 Co-Founder CTO </strong><br />
-            - 스마트팜 시스템 개발 및 인프라 설계<br />
-            - 자동화 및 IoT 시스템 개발<br />
-          </li>
-
+          <div class="profile">
+            <li>
+              <strong> 건국대학교(서울) </strong><br />
+              - 전자공학과
+            </li>
+            <li>
+              <h9>
+                <strong> LG 유플러스 </strong> <br />
+                - LTE 서비스,5G NSA 시스템 운영 및 구축<br />(Nokia, Ericsson 5G
+                Project 외 다수)<br />
+                - 데이터 센터 전원 설계 및 구축 관리<br />(서버 데이터 센터 전원
+                및 백업전원 설계/관리)<br
+              /></h9>
+            </li>
+            <li>
+              <strong> 핀치그린 Co-Founder CTO </strong><br />
+              - 스마트팜 시스템 개발 및 인프라 설계<br />
+              - 자동화 및 IoT 시스템 개발<br />
+            </li>
+          </div>
           <!-- <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p> -->
         </div>
 
@@ -167,25 +169,24 @@
           <h2 class="fw-normal">김동욱</h2>
           <h4 class="fw-normal">COO</h4>
           <br />
-
-          <li>
-            <strong>
-              한국외국어 대학교(서울) <br />인도어 학사 /경제학 박사</strong
-            >
-          </li>
-          <li>
-            <strong> 인도 뭄바이 총영사관 경제실 실무관</strong><br />
-            - 인도시장 분석
-            <br />
-            - KOTRA & 한국기업 인도시장 진출 협업
-          </li>
-          <li>
-            <strong> 노더스/자순상회 대표 </strong> <br />
-            - V커머스 판매채널 기획/제작 <br />
-            - 식품 개발 및 유통 판매 <br />
-            - 와디즈, 텀블벅 등 크라우드 펀딩 프로젝트 등
-          </li>
-
+          <div class="profile">
+            <li>
+              <strong> 한국외국어 대학교(서울) </strong><br />- 인도어 학사
+              / 경제학 박사
+            </li>
+            <li>
+              <strong> 인도 뭄바이 총영사관 경제실 실무관</strong><br />
+              - 인도시장 분석
+              <br />
+              - KOTRA & 한국기업 인도시장 진출 협업
+            </li>
+            <li>
+              <strong> 노더스/자순상회 대표 </strong> <br />
+              - V커머스 판매채널 기획/제작 <br />
+              - 식품 개발 및 유통 판매 <br />
+              - 와디즈, 텀블벅 등 크라우드 펀딩 프로젝트 등
+            </li>
+          </div>
           <!-- <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p> -->
         </div>
         <!-- /.col-lg-4 -->
@@ -204,16 +205,17 @@
           <h2 class="fw-normal">장희</h2>
           <h4 class="fw-normal">CMO</h4>
           <br />
-
-          <li>
-            <strong> 가톨릭 대학교 <br />국제통상 학사 /중문학 학사</strong>
-          </li>
-          <li>
-            <strong> AJ Networks </strong><br />
-            - 물류 부자재 유통 B2B 영업 <br />
-            - 운송 등 물류 솔루션
-          </li>
-
+          <div class="profile">
+            <li>
+              <strong> 가톨릭 대학교 </strong> <br />- 국제통상 학사 / 중문학
+              학사
+            </li>
+            <li>
+              <strong> AJ Networks </strong><br />
+              - 물류 부자재 유통 B2B 영업 <br />
+              - 운송 등 물류 솔루션
+            </li>
+          </div>
           <!-- <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p> -->
         </div>
         <!-- /.col-lg-4 -->
@@ -226,7 +228,7 @@
 
       <div class="dot row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading fw-normal lh-1">김포 고촌 Dot</h2>
+          <h2 class="featurette-heading fw-normal lh-1">김포 고촌</h2>
           <br />
           <h5 class="text-muted">경기도 김포시 고촌읍 태리 48-3</h5>
           <br />
@@ -255,7 +257,7 @@
 
       <div class="dot row featurette">
         <div class="ilsan col-md-7 order-md-2">
-          <h2 class="featurette-heading fw-normal lh-1">커피 파머 Dot</h2>
+          <h2 class="featurette-heading fw-normal lh-1">커피 파머</h2>
           <br />
           <h5 class="text-muted">경기도 일산서구 대화로 61 커피파머</h5>
           <br />
@@ -284,7 +286,7 @@
 
       <div class="dot row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading fw-normal lh-1">일산 원마운트 Dot</h2>
+          <h2 class="featurette-heading fw-normal lh-1">일산 원마운트</h2>
           <br />
           <h5 class="text-muted">경기도 일산서구 한류월드로 300 원마운트</h5>
           <br />
@@ -391,6 +393,10 @@ body {
 .marketing .col-lg-4 p {
   margin-right: 0.75rem;
   margin-left: 0.75rem;
+}
+.profile {
+  text-align: left;
+  margin-left: 60px;
 }
 /* rtl:end:ignore */
 
