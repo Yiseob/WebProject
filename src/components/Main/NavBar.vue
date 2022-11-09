@@ -207,9 +207,9 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Yantramanav&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Noto+Sans+KR&family=Poppins:wght@100&family=Yantramanav&display=swap");
 .d-flex {
-  font-family: "Yantramanav", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 25px;
   font-weight: 200;
 }

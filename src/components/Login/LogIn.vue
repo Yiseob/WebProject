@@ -117,7 +117,7 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Jua&family=Patrick+Hand&family=Poor+Story&family=Shadows+Into+Light&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Sans+KR&family=Poppins&family=Yantramanav&display=swap");
 .background {
   height: 1400px;
   display: flex;
@@ -127,7 +127,7 @@ export default {
   background-image: url(../../assets/LoginBackGround.jpg);
   background-size: cover;
   position: relative;
-  font-family: "Patrick Hand", cursive;
+  font-family: "Poppins", sans-serif;
 }
 
 .wrapper {
@@ -147,8 +147,8 @@ export default {
 }
 
 .MG {
-  font-family: "Shadows Into Light", cursive;
-  font-size: 50px;
+  font-family: "Poppins", sans-serif;
+  font-size: 40px;
   font-weight: 900;
 }
 

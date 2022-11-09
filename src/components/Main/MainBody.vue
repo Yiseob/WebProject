@@ -3,7 +3,7 @@
     <b-card
       overlay
       class="Image"
-      img-src="./Main2.jpg"
+      img-src="./Main3.png"
       img-alt="Card Image"
       text-variant="white"
       style="border: 0"
@@ -22,21 +22,18 @@ export default {
 
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Sans+KR&family=Poppins&family=Yantramanav&display=swap");
 .Image {
   margin: 0;
   text-align: center;
-  opacity: 0.7;
 }
 
 .String {
-  font-family: "Shadows Into Light", cursive;
-  font-size: 150px;
+  font-family: "Poppins", sans-serif;
+  font-size: 100px;
   line-height: 450px;
   font-weight: 400;
-
-
-  color: black;
+  margin-top: 10px;
+  color: white;
 }
 </style>

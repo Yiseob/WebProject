@@ -47,7 +47,7 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Sans+KR&family=Poppins&family=Yantramanav&display=swap");
 
 .body {
   padding-top: 10px;
@@ -62,7 +62,7 @@ export default {
   margin-bottom: 50px;
 }
 .title {
-  font-family: "Shadows Into Light", cursive;
+  font-family: "Poppins", sans-serif;
   margin-top: 10px;
   margin-bottom: 100px;
   font-size: 100px;
