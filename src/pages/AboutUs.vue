@@ -57,6 +57,7 @@
           <div class="container">
             <div class="carousel-caption" id="carousel-text2">
               <h1>거리는 짧게, <br />제품은 신선하게</h1>
+              <br />
               <p>유통거리의 단축은 작물의 신선도를 더욱 높여줍니다.</p>
               <p>
                 <a class="btn btn-lg btn-primary" href="#">작물 구경하기</a>
@@ -74,8 +75,10 @@
           <div class="container">
             <div class="carousel-caption" id="carousel-text3">
               <h1>어디서나, 적은 비용으로</h1>
+              <br />
               <p>
-                언제 어디서나 적은 비용으로 신선한 식물을 키워낼 수 있습니다.
+                언제 어디서나 적은 비용으로 <br />신선한 식물을 키워낼 수
+                있습니다.
               </p>
               <p>
                 <a class="btn btn-lg btn-primary" href="#">비용 문의하기</a>
@@ -223,7 +226,7 @@
 
       <div class="dot row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading fw-normal lh-1">김포 고촌 dot</h2>
+          <h2 class="featurette-heading fw-normal lh-1">김포 고촌 Dot</h2>
           <br />
           <h5 class="text-muted">경기도 김포시 고촌읍 태리 48-3</h5>
           <br />
@@ -252,7 +255,7 @@
 
       <div class="dot row featurette">
         <div class="ilsan col-md-7 order-md-2">
-          <h2 class="featurette-heading fw-normal lh-1">커피 파머 dot</h2>
+          <h2 class="featurette-heading fw-normal lh-1">커피 파머 Dot</h2>
           <br />
           <h5 class="text-muted">경기도 일산서구 대화로 61 커피파머</h5>
           <br />
@@ -281,7 +284,7 @@
 
       <div class="dot row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading fw-normal lh-1">일산 원마운트 dot</h2>
+          <h2 class="featurette-heading fw-normal lh-1">일산 원마운트 Dot</h2>
           <br />
           <h5 class="text-muted">경기도 일산서구 한류월드로 300 원마운트</h5>
           <br />
@@ -347,7 +350,7 @@ body {
 }
 #carousel-text1 {
   text-align: right;
-  margin-bottom: 390px;
+  margin-bottom: 370px;
   margin-right: 30px;
   font-weight: bolder;
 }
